@@ -101,6 +101,28 @@ Network: TCP
 
 Moved here: [HTTP_SOCKS_PROTOCOLS.md](HTTP_SOCKS_PROTOCOLS.md)
 
+### Docker images
+
+We cannot pull docker images from Docker Hub here in Iran.
+Therefore I've pushed the official V2Ray Docker image into the GitHub image registry.
+If you prefer pulling the image from the Docker Hub, update the `docker-compose.yml` files.
+
+```yaml
+services:
+  v2ray:
+    image: ghcr.io/getimages/v2ray:latest
+    # ...
+```
+
+* GitHub:
+  * Image: ```ghcr.io/getimages/v2ray:latest```
+  * URL: https://github.com/orgs/getimages/packages/container/package/v2ray
+  * Digest: `sha256:978c67f3dba2afb01b710620f8bc0392b36729facad466b90a49f3d7f30404be`
+* Docker Hub:
+  * Image: ```v2ray/official:latest```
+  * URL: https://hub.docker.com/r/v2ray/official/tags
+  * Digest: `sha256:978c67f3dba2afb01b710620f8bc0392b36729facad466b90a49f3d7f30404be`
+
 ## P.S.
 
 This repository is kind of forked from [v2ray-config-examples](https://github.com/xesina/v2ray-config-examples).
