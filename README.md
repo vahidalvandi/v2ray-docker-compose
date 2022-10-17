@@ -61,7 +61,7 @@ The bridge server exposes these proxy protocols:
 Shadowsocks is a popular proxy protocol.
 You can find many client apps to use the Shadowsocks proxy on your devices.
 These are recommended client apps:
-* [Qv2ray for macOS, Linux and Windows](https://qv2ray.net)
+* [Qv2ray](https://qv2ray.net) for macOS, Linux and Windows
 * [Shadowsocks for macOS](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
 * [Shadowsocks for macOS](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
 * [Shadowsocks for Linux](https://github.com/shadowsocks/shadowsocks-libev)
@@ -82,7 +82,7 @@ Password: <SHADOWSOCKS-PASSWORD>
 The VMESS proxy protocol is the recommended one.
 It's the primary protocol that V2Ray provides.
 These are recommended client apps:
-* [Qv2ray for macOS, Linux and Windows](https://qv2ray.net)
+* [Qv2ray](https://qv2ray.net) for macOS, Linux and Windows
 * [V2RayX for macOS](https://github.com/Cenmrev/V2RayX/releases)
 * [v2ray-core for Linux](https://github.com/v2ray/v2ray-core)
 * [v2rayN for Windows](https://github.com/2dust/v2rayN/releases)
