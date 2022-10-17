@@ -122,6 +122,10 @@ services:
   * Image: ```v2ray/official:latest```
   * URL: https://hub.docker.com/r/v2ray/official/tags
   * Digest: `sha256:978c67f3dba2afb01b710620f8bc0392b36729facad466b90a49f3d7f30404be`
+  
+Both images are the same.
+There is also a comparison [here](https://github.com/miladrahimi/v2ray-docker-compose/issues/18) by
+[@ohmydevops](https://github.com/ohmydevops).
 
 ## P.S.
 
