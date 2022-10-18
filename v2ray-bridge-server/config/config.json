@@ -97,7 +97,11 @@
           "outboundTag": "freedom",
           "domain": [
             "regexp:.*\\.ir$"
-          ],
+          ]
+        },
+        {
+          "type": "field",
+          "outboundTag": "freedom",
           "ip": [
             "geoip:ir",
             "0.0.0.0/8",

@@ -68,8 +68,12 @@
           "type": "field",
           "outboundTag": "freedom",
           "domain": [
-            "regexp:.*\\.ir$"
-          ],
+            "regexp:.*//.ir$"
+          ]
+        },
+        {
+          "type": "field",
+          "outboundTag": "freedom",
           "ip": [
             "geoip:private",
             "geoip:ir",
