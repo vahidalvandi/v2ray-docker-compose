@@ -94,7 +94,7 @@ Client configuration:
 IP Address: <BRIDGE-IP>
 Port: 1310
 ID/UUID/UserID: <BRIDGE-UUID>
-Alter ID: 10
+Alter ID: 0
 Level: 0
 Security/Method/Encryption: aes-128-gcm
 Network: TCP
@@ -118,17 +118,13 @@ services:
 ```
 
 * GitHub:
-  * Image: ```ghcr.io/getimages/v2ray:latest```
-  * URL: https://github.com/orgs/getimages/packages/container/package/v2ray
-  * Digest: `sha256:978c67f3dba2afb01b710620f8bc0392b36729facad466b90a49f3d7f30404be`
+  * Image: ```ghcr.io/getimages/v2fly-core:v5.1.0```
+  * URL: https://github.com/orgs/getimages/packages/container/package/v2fly-core
+  * Digest: `sha256:f035c9dfb5f1f98bd5fdea617d28c6d3b2006884e12137d61cd44460dfc6f7a6`
 * Docker Hub:
-  * Image: ```v2ray/official:latest```
-  * URL: https://hub.docker.com/r/v2ray/official/tags
-  * Digest: `sha256:978c67f3dba2afb01b710620f8bc0392b36729facad466b90a49f3d7f30404be`
-  
-Both images are the same.
-There is also a comparison [here](https://github.com/miladrahimi/v2ray-docker-compose/issues/18) by
-[@ohmydevops](https://github.com/ohmydevops).
+  * Image: ```v2fly/v2fly-core:v5.1.0```
+  * URL: https://hub.docker.com/r/v2fly/v2fly-core/tags
+  * Digest: `sha256:f035c9dfb5f1f98bd5fdea617d28c6d3b2006884e12137d61cd44460dfc6f7a6`
 
 ## P.S.
 
