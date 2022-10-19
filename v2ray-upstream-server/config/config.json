@@ -4,28 +4,30 @@
     "error": "/var/log/v2ray/error.log",
     "loglevel": "warning"
   },
-  "inbound": {
-    "listen": "0.0.0.0",
-    "port": 1310,
-    "protocol": "vmess",
-    "settings": {
-      "clients": [
-        {
-          "id": "<UPSTREAM-UUID>",
-          "alterId": 10,
-          "security": "auto"
-        }
-      ]
-    },
-    "streamSettings": {
-      "network": "ws"
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 1310,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "<UPSTREAM-UUID>",
+            "alterId": 0,
+            "security": "auto"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws"
+      }
     }
-  },
-  "outbound": {
-    "protocol": "freedom"
-  },
-  "inboundDetour": null,
-  "outboundDetour": [
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "freedom"
+    },
     {
       "protocol": "blackhole",
       "tag": "blackhole"
