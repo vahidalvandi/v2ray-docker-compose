@@ -27,7 +27,8 @@
       "settings": {
         "password": "<SHADOWSOCKS-PASSWORD>",
         "method": "aes-128-gcm",
-        "level": 0
+        "level": 0,
+        "network": "tcp,udp"
       }
     },
     {
