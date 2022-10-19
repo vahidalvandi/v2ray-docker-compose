@@ -42,7 +42,7 @@ To setup the upstream server:
 To setup the bridge server:
 1. Copy the "v2ray-bridge-server" directory into the bridge server.
 2. Replace the following variables in the `config.json` file with appropriate values.
-    * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `!FR33DoM!`.
+    * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
     * `<BRIDGE-UUID>`: The generated UUID for the bridge server.
     * `<UPSTREAM-IP>`: The upstream server IP address like `13.13.13.13`.
     * `<UPSTREAM-UUID>`: The used UUID for the upstream server.
@@ -67,16 +67,7 @@ These are recommended client apps:
 * [Shadowsocks for Windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
 * [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
-* [Outline](https://getoutline.org/get-started/#step-3)
-  > Outline is a cross platform software that supports Shadowsocks protocol.
-
-  > With the help of Outline you can have a system level proxy. 💡
-  
-  > You can generate an ss-key from your Shadowsocks config in this way:
-  ```
-  BASE64="$(echo -n METHOD:PASSWORD | base64)"
-  echo "ss://${BASE64}@IP:PORT
-  ```
+* [Outline](https://getoutline.org/get-started/#step-3) (Read more [here](OUTLINE.md))
 
 Client configuration:
 ```
