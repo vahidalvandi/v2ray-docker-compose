@@ -67,6 +67,16 @@ These are recommended client apps:
 * [Shadowsocks for Windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
 * [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
+* [Outline](https://getoutline.org/get-started/#step-3)
+  > Outline is a cross platform software that supports Shadowsocks protocol.
+
+  > With the help of Outline you can have a system level proxy. 💡
+  
+  > You can generate an ss-key from your Shadowsocks config in this way:
+  ```
+  BASE64="$(echo -n METHOD:PASSWORD | base64)"
+  echo "ss://${BASE64}@IP:PORT
+  ```
 
 Client configuration:
 ```
