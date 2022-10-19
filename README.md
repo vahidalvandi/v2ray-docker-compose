@@ -118,13 +118,13 @@ services:
 ```
 
 * GitHub:
-  * Image: ```ghcr.io/getimages/v2fly-core:v5.1.0```
+  * Image: ```ghcr.io/getimages/v2fly-core:v4.45.2```
   * URL: https://github.com/orgs/getimages/packages/container/package/v2fly-core
-  * Digest: `sha256:f035c9dfb5f1f98bd5fdea617d28c6d3b2006884e12137d61cd44460dfc6f7a6`
+  * Digest: `sha256:289fc9451f21a265f95615e29f05ea23bc32026db152863eee317738813521d7`
 * Docker Hub:
-  * Image: ```v2fly/v2fly-core:v5.1.0```
+  * Image: ```v2fly/v2fly-core:v4.45.2```
   * URL: https://hub.docker.com/r/v2fly/v2fly-core/tags
-  * Digest: `sha256:f035c9dfb5f1f98bd5fdea617d28c6d3b2006884e12137d61cd44460dfc6f7a6`
+  * Digest: `sha256:289fc9451f21a265f95615e29f05ea23bc32026db152863eee317738813521d7`
 
 ## P.S.
 
