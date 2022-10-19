@@ -11,6 +11,7 @@ services:
       - 127.0.0.1:${HTTP_PORT:-1010}:1010/udp
       - 127.0.0.1:${HTTP_PORT:-1110}:1110
       - ${SHADOWSOCKS_PORT:-1210}:1210
+      - ${SHADOWSOCKS_PORT:-1210}:1210/udp
       - ${VMESS_PORT:-1310}:1310
     volumes:
       - ./config/:/etc/v2ray/
