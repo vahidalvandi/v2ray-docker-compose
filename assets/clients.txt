@@ -11,4 +11,7 @@
     IP Address: <BRIDGE-IP>
     Port:       1210
     Password:	<SHADOWSOCKS-PASSWORD>
-    Security:   
+    Security:   AES-128-GCM
+
+[Outline]
+    Access Key: <OUTLINE>
