@@ -3,7 +3,6 @@ version: "3"
 services:
   v2ray:
     image: ghcr.io/getimages/v2fly-core:v4.45.2
-    container_name: v2ray_upstream
     restart: always
     ports:
       - ${VMESS_PORT:-1310}:1310
