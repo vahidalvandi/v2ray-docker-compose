@@ -28,7 +28,7 @@ This repository contains sample Docker Compose files to run V2Ray upstream and b
 1. Copy the "v2ray-bridge-server" directory into the bridge server.
 2. Replace the following variables in the `config.json` file with appropriate values.
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
-    * `<BRIDGE-UUID>`: A new UUID for bridge server (```cat /proc/sys/kernel/random/uuid```).
+    * `<BRIDGE-UUID>`: A new UUID for bridge server (Run ```cat /proc/sys/kernel/random/uuid```).
     * `<UPSTREAM-IP>`: The upstream server IP address like `13.13.13.13`.
     * `<UPSTREAM-UUID>`: The generated UUID for the upstream server.
 3. Run `docker-compose up -d`. 
