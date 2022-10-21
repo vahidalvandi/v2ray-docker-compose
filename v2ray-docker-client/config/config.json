@@ -21,7 +21,7 @@
       "settings": {}
     }
   ],
-  "outbound": [
+  "outbounds": [
     {
       "tag": "proxy",
       "protocol": "vmess",
