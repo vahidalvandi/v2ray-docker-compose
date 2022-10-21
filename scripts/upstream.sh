@@ -11,7 +11,7 @@ printf "Enter UPSTREAM-UUID (Leave empty to generate a random one): "
 read -r UPSTREAM_UUID
 if [ -z "$UPSTREAM_UUID" ]; then UPSTREAM_UUID=$(cat /proc/sys/kernel/random/uuid); fi
 
-sed -ie "s/<UPSTREAM-UUID>/$UPSTREAM_UUID/g" config/config.json
+sed -i "s/<UPSTREAM-UUID>/$UPSTREAM_UUID/g" config/config.json
 
 printf "\nThe Docker-compose and configuration files are ready.\n\n"
 
