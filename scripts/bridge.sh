@@ -35,4 +35,4 @@ OUTLINE="ss://$(printf '%s' aes-128-gcm:"$SHADOWSOCKS_PASSWORD" | base64)@$BRIDG
 sed -ie "s/<BRIDGE-IP>/$BRIDGE_IP/g" clients.txt
 sed -ie "s/<BRIDGE-UUID>/$BRIDGE_UUID/g" clients.txt
 sed -ie "s/<SHADOWSOCKS-PASSWORD>/$SHADOWSOCKS_PASSWORD/g" clients.txt
-sed -ie "s/<OUTLINE>/$OUTLINE/g" clients.txt
+sed -ie "s+<OUTLINE>+$OUTLINE+g" clients.txt
