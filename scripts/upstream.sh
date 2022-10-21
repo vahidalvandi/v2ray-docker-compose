@@ -13,7 +13,7 @@ if [ -z "$UPSTREAM_UUID" ]; then UPSTREAM_UUID=$(cat /proc/sys/kernel/random/uui
 
 sed -ie "s/<UPSTREAM-UUID>/$UPSTREAM_UUID/g" config/config.json
 
-printf "The Docker-compose and configuration files are ready."
+printf "\nThe Docker-compose and configuration files are ready.\n"
 
-printf "UPSTREAM-IP: %s" "$(curl -s ifconfig.io)"
-printf "UPSTREAM-UUID: %s" "$UPSTREAM_UUID"
+printf "UPSTREAM-IP: %s\n" "$(curl -s ifconfig.io)"
+printf "UPSTREAM-UUID: %s\n" "$UPSTREAM_UUID"
