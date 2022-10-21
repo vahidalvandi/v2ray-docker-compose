@@ -17,4 +17,7 @@ sed -ie "s/<UPSTREAM-UUID>/$UPSTREAM_UUID/g" config/config.json
 
 echo "The Docker-compose and configuration files are ready."
 
+UPSTREAM_IP=$(curl ifconfig.io)
+
+echo "UPSTREAM-IP: $UPSTREAM_IP"
 echo "UPSTREAM-UUID: $UPSTREAM_UUID"
