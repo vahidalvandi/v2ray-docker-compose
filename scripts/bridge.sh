@@ -36,4 +36,4 @@ sed -ie "s/<SHADOWSOCKS-PASSWORD>/$SHADOWSOCKS_PASSWORD/g" clients.txt
 sed -ie "s/<OUTLINE>/$OUTLINE/g" clients.txt
 
 printf "\nThe Docker-compose and configuration files are ready.\n"
-printf "Client configurations are stored in the clients.txt file.\n"
+printf "Client configurations are stored in the %s file.\n" "$(pwd)"
