@@ -8,17 +8,17 @@ curl -s "$LINK/$NAME/docker-compose.yml" --output docker-compose.yml
 curl -s "$LINK/$NAME/config/config.json" --output config/config.json
 curl -s "$LINK/assets/clients.txt" --output clients.txt
 
-printf "Enter UPSTREAM-IP: "
+printf "UPSTREAM-IP: "
 read -r UPSTREAM_IP
 
-printf "Enter UPSTREAM-UUID: "
+printf "UPSTREAM-UUID: "
 read -r UPSTREAM_UUID
 
-printf "Enter BRIDGE-UUID (Leave empty to generate a random one): "
+printf "BRIDGE-UUID (Leave empty to generate a random one): "
 read -r BRIDGE_UUID
 if [ -z "$BRIDGE_UUID" ]; then BRIDGE_UUID=$(cat /proc/sys/kernel/random/uuid); fi
 
-printf "Enter SHADOWSOCKS-PASSWORD (Leave empty to generate a random one): "
+printf "SHADOWSOCKS-PASSWORD (Leave empty to generate a random one): "
 read -r SHADOWSOCKS_PASSWORD
 if [ -z "$SHADOWSOCKS_PASSWORD" ]; then SHADOWSOCKS_PASSWORD=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c8); fi
 
