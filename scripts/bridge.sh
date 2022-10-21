@@ -27,8 +27,6 @@ sed -ie "s/<UPSTREAM-UUID>/$UPSTREAM_UUID/g" config/config.json
 sed -ie "s/<BRIDGE-UUID>/$BRIDGE_UUID/g" config/config.json
 sed -ie "s/<SHADOWSOCKS-PASSWORD>/$SHADOWSOCKS_PASSWORD/g" config/config.json
 
-printf "\nThe Docker-compose and configuration files are ready.\n\n"
-
 BRIDGE_IP=$(curl -s ifconfig.io)
 OUTLINE="ss:\/\/$(printf '%s' aes-128-gcm:"$SHADOWSOCKS_PASSWORD" | base64)@$BRIDGE_IP:1210"
 
@@ -37,4 +35,4 @@ sed -ie "s/<BRIDGE-UUID>/$BRIDGE_UUID/g" clients.txt
 sed -ie "s/<SHADOWSOCKS-PASSWORD>/$SHADOWSOCKS_PASSWORD/g" clients.txt
 sed -ie "s/<OUTLINE>/$OUTLINE/g" clients.txt
 
-cat clients.txt
+printf "\nThe Docker-compose and configuration files are ready.\n\n"
