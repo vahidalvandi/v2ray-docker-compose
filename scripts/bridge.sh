@@ -35,4 +35,5 @@ sed -ie "s/<BRIDGE-UUID>/$BRIDGE_UUID/g" clients.txt
 sed -ie "s/<SHADOWSOCKS-PASSWORD>/$SHADOWSOCKS_PASSWORD/g" clients.txt
 sed -ie "s/<OUTLINE>/$OUTLINE/g" clients.txt
 
-printf "\nThe Docker-compose and configuration files are ready.\n\n"
+printf "\nThe Docker-compose and configuration files are ready.\n"
+printf "Client configurations are stored in the clients.txt file.\n"
