@@ -54,14 +54,25 @@ These are recommended client apps:
 * [Shadowsocks for Windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
 * [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
-* [Outline](https://getoutline.org/get-started/#step-3) ([How to use Outline](OUTLINE.md))
+* [Outline](https://getoutline.org/get-started/#step-3) (Supports Shadowsocks links)
 
-Client configuration:
+###### Client configuration
+
 ```
 IP Address: <BRIDGE-IP>
 Port: 1210
 Encryption/Method/Algorithm: aes-128-gcm
 Password: <SHADOWSOCKS-PASSWORD>
+```
+
+You can run the following command to generate the Shadowsocks link.
+
+```shell
+echo "ss://$(echo -n METHOD:PASSWORD | base64)@IP:PORT"
+
+# Example
+echo "ss://$(echo -n aes-128-gcm:FR33DoM | base64)@13.13.13.13:1210"
+# ss://YWVzLTEyOC1nY206RlIzM0RvTQ==@13.13.13.13:1210
 ```
 
 ##### VMESS Protocol
