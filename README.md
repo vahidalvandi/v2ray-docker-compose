@@ -48,13 +48,12 @@ The bridge server exposes these proxy protocols:
 Shadowsocks is a popular proxy protocol.
 You can find many client apps to use the Shadowsocks proxy on your devices.
 These are recommended client apps:
-* [Qv2ray](https://qv2ray.net) (macOS, Linux and Windows)
+* [Outline](https://getoutline.org/get-started/#step-3)
 * [Shadowsocks for macOS](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
 * [Shadowsocks for Linux](https://github.com/shadowsocks/shadowsocks-libev)
 * [Shadowsocks for Windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
 * [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
-* [Outline](https://getoutline.org/get-started/#step-3) (Supports Shadowsocks links)
 
 ###### Client configuration
 
@@ -64,6 +63,8 @@ Port: 1210
 Encryption/Method/Algorithm: aes-128-gcm
 Password: <SHADOWSOCKS-PASSWORD>
 ```
+
+###### Shadowsocks links
 
 You can run the following command to generate the Shadowsocks link.
 
