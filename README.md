@@ -55,7 +55,7 @@ These are recommended client apps:
 * [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
 
-###### Client configuration
+Client app configurations:
 
 ```
 IP Address: <BRIDGE-IP>
@@ -64,31 +64,24 @@ Encryption/Method/Algorithm: aes-128-gcm
 Password: <SHADOWSOCKS-PASSWORD>
 ```
 
-###### Shadowsocks links
-
 You can run the following command to generate the Shadowsocks link.
 
 ```shell
-echo "ss://$(echo -n METHOD:PASSWORD | base64)@IP:PORT"
-
-# Example
-echo "ss://$(echo -n aes-128-gcm:FR33DoM | base64)@13.13.13.13:1210"
-# ss://YWVzLTEyOC1nY206RlIzM0RvTQ==@13.13.13.13:1210
+echo "ss://$(echo -n aes-128-gcm:<SHADOWSOCKS-PASSWORD> | base64)@IP:PORT"
 ```
 
 ##### VMESS Protocol
 
-The VMESS proxy protocol is the recommended one.
-It's the primary protocol that V2Ray provides.
+The VMESS proxy protocol is the primary protocol that V2Ray provides.
 These are recommended client apps:
-* [Qv2ray](https://qv2ray.net) (macOS, Linux and Windows)
 * [V2RayX for macOS](https://github.com/Cenmrev/V2RayX/releases)
 * [v2ray-core for Linux](https://github.com/v2ray/v2ray-core)
-* [v2rayN for Windows](https://github.com/2dust/v2rayN/releases)
+* [Qv2ray for Windows](https://qv2ray.net)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
 * [v2rayNG for Android](https://github.com/2dust/v2rayNG)
 
-Client configuration:
+Client app configurations:
+
 ```
 IP Address: <BRIDGE-IP>
 Port: 1310
