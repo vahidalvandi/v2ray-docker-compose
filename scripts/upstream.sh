@@ -7,7 +7,7 @@ mkdir -p $NAME/config && cd $NAME || exit
 curl -s "$LINK/$NAME/docker-compose.yml" --output docker-compose.yml
 curl -s "$LINK/$NAME/config/config.json" --output config/config.json
 
-printf "%s" "Enter UPSTREAM-UUID (Leave empty to generate a random one): "
+printf "Enter UPSTREAM-UUID (Leave empty to generate a random one): "
 read -r UPSTREAM_UUID
 if [ -z "$UPSTREAM_UUID" ]; then UPSTREAM_UUID=$(cat /proc/sys/kernel/random/uuid); fi
 

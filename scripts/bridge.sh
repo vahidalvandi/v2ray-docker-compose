@@ -8,17 +8,17 @@ curl -s "$LINK/$NAME/docker-compose.yml" --output docker-compose.yml
 curl -s "$LINK/$NAME/config/config.json" --output config/config.json
 curl -s "$LINK/assets/clients.txt" --output clients.txt
 
-printf "%s" "Enter UPSTREAM-IP: "
+printf "Enter UPSTREAM-IP: "
 read -r UPSTREAM_IP
 
-printf "%s" "Enter UPSTREAM-UUID: "
+printf "Enter UPSTREAM-UUID: "
 read -r UPSTREAM_UUID
 
-printf "%s" "Enter BRIDGE-UUID (Leave empty to generate a random one): "
+printf "Enter BRIDGE-UUID (Leave empty to generate a random one): "
 read -r BRIDGE_UUID
 if [ -z "$BRIDGE_UUID" ]; then BRIDGE_UUID=$(cat /proc/sys/kernel/random/uuid); fi
 
-printf "%s" "Enter SHADOWSOCKS-PASSWORD (Leave empty to generate a random one): "
+printf "Enter SHADOWSOCKS-PASSWORD (Leave empty to generate a random one): "
 read -r SHADOWSOCKS_PASSWORD
 if [ -z "$SHADOWSOCKS_PASSWORD" ]; then SHADOWSOCKS_PASSWORD=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c8); fi
 
@@ -27,7 +27,7 @@ sed -ie "s/<UPSTREAM-UUID>/$UPSTREAM_UUID/g" config/config.json
 sed -ie "s/<BRIDGE-UUID>/$BRIDGE_UUID/g" config/config.json
 sed -ie "s/<SHADOWSOCKS-PASSWORD>/$SHADOWSOCKS_PASSWORD/g" config/config.json
 
-echo "The Docker-compose and configuration files are ready."
+printf "\nThe Docker-compose and configuration files are ready.\n\n"
 
 BRIDGE_IP=$(curl ifconfig.io)
 OUTLINE="ss://$(printf '%s' aes-128-gcm:"$SHADOWSOCKS_PASSWORD" | base64)@$BRIDGE_IP:1210"
