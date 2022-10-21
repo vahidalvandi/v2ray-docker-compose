@@ -1,0 +1,14 @@
+[VMESS]
+    IP Address: <BRIDGE-IP>
+    Port:       1310
+    UUID:       <BRIDGE-UUID>
+    Security:   AES-128-GCM
+    Alter ID:   0
+    Level:      0
+    Network:    TCP
+
+[Shadowsocks]
+    IP Address: <BRIDGE-IP>
+    Port:       1210
+    Password:	<SHADOWSOCKS-PASSWORD>
+    Security:   
