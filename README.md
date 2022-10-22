@@ -92,7 +92,7 @@ Security/Method/Encryption: aes-128-gcm
 Network: TCP
 ```
 
-##### HTTP & SOCKS Protocols
+##### HTTP/HTTPS & SOCKS Protocols
 
 Moved here: [HTTP_SOCKS_PROTOCOLS.md](HTTP_SOCKS_PROTOCOLS.md)
 
