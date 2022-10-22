@@ -40,7 +40,7 @@ This repository contains sample Docker Compose files to run V2Ray upstream and b
 The bridge server exposes these proxy protocols:
 * Shadowsocks
 * VMESS
-* HTTP
+* HTTP/HTTPS
 * SOCKS
 
 ##### Shadowsocks Protocol
