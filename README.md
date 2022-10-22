@@ -92,6 +92,8 @@ Security/Method/Encryption: aes-128-gcm
 Network: TCP
 ```
 
+You can use the `v2ray-bridge-server/vmess.sh` bash script to generate VMESS links.
+
 ##### HTTP/HTTPS & SOCKS Protocols
 
 Moved here: [HTTP_SOCKS_PROTOCOLS.md](HTTP_SOCKS_PROTOCOLS.md)
