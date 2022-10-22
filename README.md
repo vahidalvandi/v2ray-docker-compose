@@ -112,11 +112,12 @@ If you prefer pulling the image from the Docker Hub, update the `docker-compose.
   * Image: ```v2fly/v2fly-core:v4.45.2```
   * URL: https://hub.docker.com/r/v2fly/v2fly-core/tags
   * Digest: `sha256:289fc9451f21a265f95615e29f05ea23bc32026db152863eee317738813521d7`
-  
-## Read more
 
+## More
+
+* Setup V2Ray servers using Ansible: https://github.com/ohmydevops/v2ray-ansible
 * Read more about V2Ray: https://www.v2fly.org
-* Read about V2Ray configurations: https://guide.v2fly.org
+* Read more about V2Ray configurations: https://guide.v2fly.org
 
 ## P.S.
 
