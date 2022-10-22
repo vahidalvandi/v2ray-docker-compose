@@ -39,9 +39,8 @@ This repository contains sample Docker Compose files to run V2Ray upstream and b
 
 ##### Shadowsocks Protocol
 
-Shadowsocks is a popular proxy protocol.
-You can find many client apps to use the Shadowsocks proxy on your devices.
-These are recommended client apps:
+Shadowsocks is a popular proxy protocol with a variety of client applications.
+We recommend these client applications:
 * [Outline](https://getoutline.org/get-started/#step-3)
 * [Shadowsocks for macOS](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
 * [Shadowsocks for Linux](https://github.com/shadowsocks/shadowsocks-libev)
@@ -49,7 +48,7 @@ These are recommended client apps:
 * [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
 
-Client app configurations:
+You can configure your client application using these settings:
 
 ```
 IP Address: <BRIDGE-IP>
@@ -66,15 +65,15 @@ echo "ss://$(echo -n aes-128-gcm:<SHADOWSOCKS-PASSWORD> | base64)@<BRIDGE-IP>:12
 
 ##### VMESS Protocol
 
-The VMESS proxy protocol is the primary protocol that V2Ray provides.
-These are recommended client apps:
+The VMESS proxy protocol is the primary protocol that V2Ray servers provide.
+We recommend these client applications:
 * [V2RayX for macOS](https://github.com/Cenmrev/V2RayX/releases)
 * [v2ray-core for Linux](https://github.com/v2ray/v2ray-core)
 * [Qv2ray for Windows](https://qv2ray.net)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
 * [v2rayNG for Android](https://github.com/2dust/v2rayNG)
 
-Client app configurations:
+You can configure your client application using these settings:
 
 ```
 IP Address: <BRIDGE-IP>
