@@ -15,4 +15,4 @@ read -r BRIDGE_UUID
 JSON="{\"add\": \"$BRIDGE_IP\", \"aid\": \"0\", \"host\": \"\", \"id\": \"$BRIDGE_UUID\", \"net\": \"tcp\", \"path\": \
 \"\", \"port\": \"$BRIDGE_PORT\", \"ps\": \"$BRIDGE_IP/tcp\", \"tls\": \"\", \"type\": \"none\", \"v\": \"2\"}"
 
-printf "\n%s:\n%s%s\n" "VMESS Link" "vmess://" "$(echo "$JSON" | base64)"
+printf "\n%s:\n%s%s\n" "VMESS Link" "vmess://" "$(echo "$JSON" | base64 -w 0)"
