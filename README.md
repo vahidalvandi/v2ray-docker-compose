@@ -89,10 +89,6 @@ Moved here: [HTTP_SOCKS_PROTOCOLS.md](HTTP_SOCKS_PROTOCOLS.md)
 
 ### Docker images
 
-We cannot pull docker images from Docker Hub here in Iran.
-Therefore I've pushed the official V2Ray Docker image into the GitHub image registry.
-If you prefer pulling the image from the Docker Hub, update the `docker-compose.yml` files.
-
 * GitHub:
   * Image: ```ghcr.io/getimages/v2fly-core:v4.45.2```
   * URL: https://github.com/orgs/getimages/packages/container/package/v2fly-core
