@@ -16,4 +16,5 @@ SS_ENCRYPTION=${SS_ENCRYPTION:-aes-128-gcm}
 printf "SHADOWSOCKS-PASSWORD: "
 read -r SS_PASSWORD
 
-printf "ss://%s@%s:%s\n" "$(echo "$SS_ENCRYPTION:$SS_PASSWORD" | base64)" "$IP" "$PORT"
+BASE64=$(printf "%s:%s" "$SS_ENCRYPTION" "$SS_PASSWORD" | base64 -w 0)
+printf "ss://%s@%s:%s#%s:%s\n" "$BASE64" "$IP" "$PORT" "$IP" "$PORT"
