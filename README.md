@@ -57,11 +57,7 @@ Encryption/Method/Algorithm: aes-128-gcm
 Password: <SHADOWSOCKS-PASSWORD>
 ```
 
-You can run the following command to generate Shadowsocks links (Outline access keys).
-
-```shell
-echo "ss://$(echo -n aes-128-gcm:<SHADOWSOCKS-PASSWORD> | base64)@<BRIDGE-IP>:1210"
-```
+You can use the `./v2ray-bridge-server/shadowsocks.sh` bash script to generate Shadowsocks links (Outline access keys).
 
 ##### VMESS Protocol
 
