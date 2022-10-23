@@ -37,17 +37,10 @@ This repository contains sample Docker Compose files to run V2Ray upstream and b
 
 #### Clients
 
-The bridge server exposes these proxy protocols:
-* Shadowsocks
-* VMESS
-* HTTP/HTTPS
-* SOCKS
-
 ##### Shadowsocks Protocol
 
-Shadowsocks is a popular proxy protocol.
-You can find many client apps to use the Shadowsocks proxy on your devices.
-These are recommended client apps:
+Shadowsocks is a popular proxy protocol with a variety of client applications.
+We recommend these client applications:
 * [Outline](https://getoutline.org/get-started/#step-3)
 * [Shadowsocks for macOS](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
 * [Shadowsocks for Linux](https://github.com/shadowsocks/shadowsocks-libev)
@@ -55,7 +48,7 @@ These are recommended client apps:
 * [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
 
-Client app configurations:
+You can configure your client application using these settings:
 
 ```
 IP Address: <BRIDGE-IP>
@@ -64,7 +57,7 @@ Encryption/Method/Algorithm: aes-128-gcm
 Password: <SHADOWSOCKS-PASSWORD>
 ```
 
-You can run the following command to generate the Shadowsocks link.
+You can run the following command to generate Shadowsocks links (Outline access keys).
 
 ```shell
 echo "ss://$(echo -n aes-128-gcm:<SHADOWSOCKS-PASSWORD> | base64)@<BRIDGE-IP>:1210"
@@ -72,15 +65,15 @@ echo "ss://$(echo -n aes-128-gcm:<SHADOWSOCKS-PASSWORD> | base64)@<BRIDGE-IP>:12
 
 ##### VMESS Protocol
 
-The VMESS proxy protocol is the primary protocol that V2Ray provides.
-These are recommended client apps:
+The VMESS proxy protocol is the primary protocol that V2Ray servers provide.
+We recommend these client applications:
 * [V2RayX for macOS](https://github.com/Cenmrev/V2RayX/releases)
 * [v2ray-core for Linux](https://github.com/v2ray/v2ray-core)
 * [Qv2ray for Windows](https://qv2ray.net)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
 * [v2rayNG for Android](https://github.com/2dust/v2rayNG)
 
-Client app configurations:
+You can configure your client application using these settings:
 
 ```
 IP Address: <BRIDGE-IP>
@@ -91,6 +84,8 @@ Level: 0
 Security/Method/Encryption: aes-128-gcm
 Network: TCP
 ```
+
+You can use the `./v2ray-bridge-server/vmess.sh` bash script to generate VMESS links.
 
 ##### HTTP/HTTPS & SOCKS Protocols
 
@@ -110,11 +105,12 @@ If you prefer pulling the image from the Docker Hub, update the `docker-compose.
   * Image: ```v2fly/v2fly-core:v4.45.2```
   * URL: https://hub.docker.com/r/v2fly/v2fly-core/tags
   * Digest: `sha256:289fc9451f21a265f95615e29f05ea23bc32026db152863eee317738813521d7`
-  
-## Read more
 
+## More
+
+* Setup V2Ray servers using Ansible: https://github.com/ohmydevops/v2ray-ansible
 * Read more about V2Ray: https://www.v2fly.org
-* Read about V2Ray configurations: https://guide.v2fly.org
+* Read more about V2Ray configurations: https://guide.v2fly.org
 
 ## P.S.
 
