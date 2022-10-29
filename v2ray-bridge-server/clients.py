@@ -26,7 +26,7 @@ for inbound in config['inbounds']:
         password = inbound['settings']['password']
         security = base64.b64encode((method + ":" + password).encode('ascii')).decode('ascii')
 
-        print("\nShadowsocks: ")
+        print("\nShadowsocks/Outline: ")
         print("ss://{}@{}:{}#{}:{}".format(security, ip, port, ip, port))
     if inbound['protocol'] == 'vmess':
         port = str(inbound['port'])
