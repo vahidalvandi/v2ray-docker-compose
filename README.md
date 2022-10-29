@@ -81,7 +81,12 @@ Security/Method/Encryption: aes-128-gcm
 Network: TCP
 ```
 
-You can use the `./v2ray-bridge-server/vmess.sh` bash script to generate VMESS links.
+You can use the `./v2ray-bridge-server/json2vmess.sh` bash script to generate VMESS links (make sure to install `jq` package before running the script: e.g.`apt install jq`):
+
+```bash
+cd v2ray-bridge-server
+bash json2vmess.sh
+```
 
 ##### HTTP/HTTPS & SOCKS Protocols
 
