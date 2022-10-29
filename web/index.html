@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <title>راهنمای راه‌اندازی</title>
+    <style>
+        body {
+            direction: rtl;
+            margin: auto;
+            padding: 0;
+        }
+
+        header {
+            background: #dadada;
+            padding: 5px 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 0 10px;
+        }
+
+        main kbd {
+            background: #dadada;
+            border: solid 1px gray;
+            border-radius: 5px;
+            padding: 1px 5px;
+        }
+
+        main div:has(a) {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+
+        main div a {
+            background: #dadada;
+            border: solid 1px gray;
+            border-radius: 5px;
+            display: block;
+            padding: 5px;
+            margin-left: 5px;
+            text-decoration: none;
+            color: black;
+            font-size: small;
+        }
+
+        main div:has(textarea) {
+            display: flex;
+            flex-direction: row;
+        }
+
+        main div textarea {
+            flex: 1;
+            padding: 5px;
+            text-align: left;
+            border-radius: 5px;
+            font-size: xx-small;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>راهنمای راه‌اندازی</h1>
+</header>
+<main>
+    <h2>Outline (گزینه ساده)</h2>
+    <p>برای به‌کارگیری Outline نخست آنرا با یکی از گزینه های زیر دریافت کنید.</p>
+    <div>
+        <a href="//play.google.com/store/apps/details?id=org.outline.android.client"
+           target="_blank">Android</a>
+        <a href="//apps.apple.com/us/app/outline-app/id1356177741"
+           target="_blank">iOS</a>
+        <a href="//raw.githubusercontent.com/Jigsaw-Code/outline-releases/master/client/stable/Outline-Client.exe"
+           target="_blank">Windows</a>
+        <a href="//itunes.apple.com/us/app/outline-app/id1356178125"
+           target="_blank">macOS</a>
+    </div>
+    <p>
+        سپس برنامه Outline را باز کنید.
+        بر روی <kbd>+</kbd> یا <kbd>Add server</kbd> بزنید.
+        نوشته زیر را در جایگاه access key بگذارید.
+    </p>
+    <div>
+        <textarea title="Access key" readonly>ss://proxy#name</textarea>
+    </div>
+    <p>
+        بر روی دکمه <kbd>ADD SERVER</kbd> که پس از زمان کوتاهی پدیدار می‌شود بزنید.
+        اکنون می‌توانید Proxy افزوده شده با نام <kbd id="name">name</kbd> را به کار بگیرید.
+    </p>
+    <h2>Shadowsocks</h2>
+    <p>برای به‌کارگیری Shadowsocks نخست آنرا با یکی از گزینه های زیر دریافت کنید.</p>
+    <div>
+        <a href="https://github.com/shadowsocks/shadowsocks-android/releases"
+           target="_blank">Android</a>
+        <a href="https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518"
+           target="_blank">iOS (ShadowLink)</a>
+        <a href="https://github.com/shadowsocks/shadowsocks-windows/releases"
+           target="_blank">Windows</a>
+        <a href="https://github.com/shadowsocks/ShadowsocksX-NG/releases"
+           target="_blank">macOS</a>
+    </div>
+    <p>همان access key بالا را می‌توانید برای Shadowsocks نیز به کار ببرید.</p>
+    <h2>VMESS</h2>
+    <p>برای به‌کارگیری VMESS نخست آنرا با یکی از گزینه های زیر دریافت کنید.</p>
+    <div>
+        <a href="https://github.com/2dust/v2rayNG"
+           target="_blank">Android (v2rayNG)</a>
+        <a href="https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518"
+           target="_blank">iOS (ShadowLink)</a>
+        <a href="https://qv2ray.net"
+           target="_blank">Windows (qv2ray)</a>
+        <a href="https://github.com/Cenmrev/V2RayX/releases"
+           target="_blank">macOS (V2RayX)</a>
+    </div>
+    <p>همان access key بالا را می‌توانید برای Shadowsocks نیز به کار ببرید.</p>
+    <div>
+        <textarea title="VMESS Link">vmess://etc</textarea>
+    </div>
+</main>
+
+<script>
+    let ssLink = document.getElementsByTagName("textarea")[0]
+    let vmLink = document.getElementsByTagName("textarea")[1]
+
+    document.getElementById('name').innerHTML = ssLink.value.split('#')[1]
+
+    ssLink.onclick = vmLink.onclick = function () {
+        this.select();
+        this.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(this.value);
+    };
+</script>
+
+</body>
+</html>

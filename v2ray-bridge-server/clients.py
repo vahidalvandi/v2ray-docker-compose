@@ -5,9 +5,11 @@ import os
 from pathlib import Path
 from urllib.request import urlopen
 
-path = Path(__file__).parent.joinpath('config/config.json')
-file = open(str(path), 'r')
+path = Path(__file__).parent
+file = open(str(path.joinpath('config/config.json')), 'r')
 config = json.load(file)
+
+html = open(str(path.joinpath('../web/index.html')), 'r').read()
 
 ip = urlopen("http://ifconfig.io/ip").read().decode().rstrip()
 
@@ -25,9 +27,12 @@ for inbound in config['inbounds']:
         method = inbound['settings']['method']
         password = inbound['settings']['password']
         security = base64.b64encode((method + ":" + password).encode('ascii')).decode('ascii')
+        link = "ss://{}@{}:{}#{}:{}".format(security, ip, port, ip, port)
 
         print("\nShadowsocks/Outline: ")
-        print("ss://{}@{}:{}#{}:{}".format(security, ip, port, ip, port))
+        print(link)
+
+        html = html.replace("ss://proxy#name", link)
     if inbound['protocol'] == 'vmess':
         port = str(inbound['port'])
         uuid = inbound['settings']['clients'][0]['id']
@@ -37,6 +42,11 @@ for inbound in config['inbounds']:
         c = {"add": ip, "aid": "0", "host": "", "id": uuid, "net": "tcp", "path": "", "port": port, "ps": ps,
              "tls": "none", "type": "none", "v": "2"}
         j = json.dumps(c)
+        link = "vmess://" + base64.b64encode(j.encode('ascii')).decode('ascii')
 
         print("\nVMESS: ")
-        print("vmess://" + base64.b64encode(j.encode('ascii')).decode('ascii'))
+        print(link)
+
+        html = html.replace("vmess://etc", link)
+
+open(str(path.joinpath('../web/index.html')), 'w').write(html)
