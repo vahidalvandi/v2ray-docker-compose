@@ -90,7 +90,7 @@ bash json2vmess.sh
 
 ##### HTTP/HTTPS & SOCKS Protocols
 
-Moved here: [HTTP_SOCKS_PROTOCOLS.md](HTTP_SOCKS_PROTOCOLS.md)
+Moved here: [HTTP_SOCKS_PROTOCOLS.md](HTTP_SOCKS.md)
 
 ### Docker images
 
