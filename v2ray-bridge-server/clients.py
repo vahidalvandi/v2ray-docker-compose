@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import base64
 import json
+import os
 from urllib.request import urlopen
 
 file = open('config/config.json', 'r')
@@ -11,20 +12,20 @@ ip = urlopen("http://ifconfig.io/ip").read().decode().rstrip()
 for inbound in config['inbounds']:
     if inbound['protocol'] == 'socks':
         port = str(inbound['port'])
-        print("SOCKS Proxy: ")
-        print("\tHost: 127.0.0.1, Port: {}".format(port))
+        print("\nSOCKS Proxy: ")
+        print("Host: 127.0.0.1, Port: {}".format(port))
     if inbound['protocol'] == 'http':
         port = str(inbound['port'])
-        print("HTTP Proxy: ")
-        print("\tHost: 127.0.0.1, Port: {}".format(port))
+        print("\nHTTP Proxy: ")
+        print("Host: 127.0.0.1, Port: {}".format(port))
     if inbound['protocol'] == 'shadowsocks':
         port = str(inbound['port'])
         method = inbound['settings']['method']
         password = inbound['settings']['password']
         security = base64.b64encode((method + ":" + password).encode('ascii')).decode('ascii')
 
-        print("Shadowsocks Proxy: ")
-        print("\tss://{}@{}:{}#{}:{}".format(security, ip, port, ip, port))
+        print("\nShadowsocks Proxy: ")
+        print("ss://{}@{}:{}#{}:{}".format(security, ip, port, ip, port))
     if inbound['protocol'] == 'vmess':
         port = str(inbound['port'])
         uuid = inbound['settings']['clients'][0]['id']
@@ -35,5 +36,5 @@ for inbound in config['inbounds']:
              "tls": "none", "type": "none", "v": "2"}
         j = json.dumps(c)
 
-        print("VMESS Proxy: ")
-        print("\tvmess://" + base64.b64encode(j.encode('ascii')).decode('ascii'))
+        print("\nVMESS Proxy: ")
+        print("vmess://" + base64.b64encode(j.encode('ascii')).decode('ascii'))
