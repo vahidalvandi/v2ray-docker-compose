@@ -6,10 +6,10 @@ services:
     restart: always
     environment:
       - v2ray.vmess.aead.forced=false
-    ports:
-      - "127.0.0.1:1010:1010"
-      - "127.0.0.1:1010:1010/udp"
-      - "127.0.0.1:1110:1110"
+    expose:
+      - 1010
+      - 1010/udp
+      - 1110
     volumes:
       - ./config/:/etc/v2ray/
       - ./logs:/var/log/v2ray/

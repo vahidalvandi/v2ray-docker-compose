@@ -14,12 +14,15 @@
           {
             "id": "<UPSTREAM-UUID>",
             "alterId": 0,
-            "security": "auto"
+            "security": "aes-128-gcm"
           }
         ]
       },
       "streamSettings": {
-        "network": "ws"
+        "network": "tcp"
+      },
+      "mux": {
+        "enabled": true
       }
     }
   ],
