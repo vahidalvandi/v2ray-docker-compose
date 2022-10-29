@@ -34,6 +34,7 @@ This repository contains sample Docker Compose files to run V2Ray upstream and b
     * `<UPSTREAM-IP>`: The upstream server IP address like `13.13.13.13`.
     * `<UPSTREAM-UUID>`: The generated UUID for the upstream server.
 1. Run `docker-compose up -d`. 
+1. Run `./clients.py`. It generate client configurations (links).
 
 #### Clients
 
@@ -57,8 +58,6 @@ Encryption/Method/Algorithm: aes-128-gcm
 Password: <SHADOWSOCKS-PASSWORD>
 ```
 
-You can use the `./v2ray-bridge-server/shadowsocks.sh` bash script to generate Shadowsocks links (Outline access keys).
-
 ##### VMESS Protocol
 
 The VMESS proxy protocol is the primary protocol that V2Ray servers provide.
@@ -79,13 +78,6 @@ Alter ID: 0
 Level: 0
 Security/Method/Encryption: aes-128-gcm
 Network: TCP
-```
-
-You can use the `./v2ray-bridge-server/json2vmess.sh` bash script to generate VMESS links (make sure to install `jq` package before running the script: e.g.`apt install jq`):
-
-```bash
-cd v2ray-bridge-server
-bash json2vmess.sh
 ```
 
 ##### HTTP/HTTPS & SOCKS Protocols
