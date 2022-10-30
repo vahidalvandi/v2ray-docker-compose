@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+
 import base64
 import json
-import os
 from pathlib import Path
 from urllib.request import urlopen
 
