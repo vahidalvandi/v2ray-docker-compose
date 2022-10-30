@@ -1,4 +1,6 @@
 .idea
 .env
 .docker
-
+v2ray-upstream-server/logs/
+v2ray-bridge-server/logs/
+v2ray-docker-client/logs/
