@@ -28,6 +28,7 @@
             border: solid 1px gray;
             border-radius: 5px;
             padding: 1px 5px;
+            white-space: nowrap;
         }
 
         main div:has(a) {
@@ -43,7 +44,7 @@
             border-radius: 5px;
             display: block;
             padding: 5px;
-            margin-left: 5px;
+            margin: 5px;
             text-decoration: none;
             color: black;
             font-size: small;
@@ -81,60 +82,58 @@
         <a href="//itunes.apple.com/us/app/outline-app/id1356178125"
            target="_blank">macOS</a>
     </div>
-    <p>
-        سپس برنامه Outline را باز کنید.
-        بر روی <kbd>+</kbd> یا <kbd>Add server</kbd> بزنید.
-        نوشته زیر را در جایگاه access key بگذارید.
-    </p>
+    <p>نوشته زیر را Copy کنید.</p>
     <div>
         <textarea title="Access key" readonly>ss://proxy#name</textarea>
     </div>
     <p>
-        بر روی دکمه <kbd>ADD SERVER</kbd> که پس از زمان کوتاهی پدیدار می‌شود بزنید.
-        اکنون می‌توانید Proxy افزوده شده با نام <kbd id="name">name</kbd> را به کار بگیرید.
+        برنامه Outline را باز کنید.
+        بر روی <kbd>+</kbd> یا <kbd>Add server</kbd> بزنید.
+        نوشته را در جایگاه access key بگذارید.
+        بر روی دکمه <kbd>ADD SERVER</kbd> که پس از زمان کوتاهی پدیدار می‌شود بزنید تا Server به برنامه افزوده شود.
     </p>
-    <h2>Shadowsocks</h2>
-    <p>برای به‌کارگیری Shadowsocks نخست آنرا با یکی از گزینه های زیر دریافت کنید.</p>
-    <div>
-        <a href="https://github.com/shadowsocks/shadowsocks-android/releases"
-           target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518"
-           target="_blank">iOS (ShadowLink)</a>
-        <a href="https://github.com/shadowsocks/shadowsocks-windows/releases"
-           target="_blank">Windows</a>
-        <a href="https://github.com/shadowsocks/ShadowsocksX-NG/releases"
-           target="_blank">macOS</a>
-    </div>
-    <p>همان access key بالا را می‌توانید برای Shadowsocks نیز به کار ببرید.</p>
-    <h2>VMESS</h2>
-    <p>برای به‌کارگیری VMESS نخست آنرا با یکی از گزینه های زیر دریافت کنید.</p>
+    <h2>VMESS (گزینه بهتر)</h2>
+    <p>برای به‌کارگیری VMESS نخست یکی از برنامه های زیر را دریافت کنید.</p>
     <div>
         <a href="https://github.com/2dust/v2rayNG"
            target="_blank">Android (v2rayNG)</a>
         <a href="https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518"
            target="_blank">iOS (ShadowLink)</a>
         <a href="https://qv2ray.net"
-           target="_blank">Windows (qv2ray)</a>
+           target="_blank">Windows (Qv2ray)</a>
         <a href="https://github.com/Cenmrev/V2RayX/releases"
            target="_blank">macOS (V2RayX)</a>
     </div>
-    <p>همان access key بالا را می‌توانید برای Shadowsocks نیز به کار ببرید.</p>
+    <p>نوشته زیر را Copy کنید.</p>
     <div>
-        <textarea title="VMESS Link">vmess://etc</textarea>
+        <textarea title="VMESS Link" readonly>vmess://etc</textarea>
     </div>
+    <p>
+        در برنامه v2rayNG (Android):
+        روی <kbd>+</kbd> و سپس <kbd>Import config from Clipboard</kbd> بزنید تا Server به برنامه افزوده شود.
+        <br>
+        در برنامه ShadowLink (iOS):
+        روی <kbd>Server</kbd>، سپس <kbd>+</kbd> و سپس <kbd>Server links</kbd> بزنید تا Server به برنامه افزوده شود.
+        <br>
+        در برنامه Qv2ray (Windows):
+        روی <kbd>Import+</kbd> بزنید و نوشته را در بخش Share Link بچسبانید و روی <kbd>Import</kbd> بزنید.
+        <br>
+        در برنامه V2RayX (macOS):
+        روی <kbd>Configure</kbd>، سپس <kbd>...Import</kbd> و سپس <kbd>...Import from other links</kbd> بزنید.
+    </p>
 </main>
 
 <script>
-    let ssLink = document.getElementsByTagName("textarea")[0]
-    let vmLink = document.getElementsByTagName("textarea")[1]
-
-    document.getElementById('name').innerHTML = ssLink.value.split('#')[1]
-
-    ssLink.onclick = vmLink.onclick = function () {
+    let copyable = function () {
         this.select();
         this.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(this.value);
     };
+
+    const inputs = document.getElementsByTagName('textarea');
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].onclick = copyable
+    }
 </script>
 
 </body>
