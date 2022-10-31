@@ -49,4 +49,4 @@ for inbound in config['inbounds']:
 
         html = html.replace("vmess://etc", link)
 
-open(str(path.joinpath('../web/index.html')), 'w').write(html)
+open(str(path.joinpath('web/index.html')), 'w').write(html)
