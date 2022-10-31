@@ -82,7 +82,7 @@ Network: TCP
 
 ##### HTTP/HTTPS & SOCKS Protocols
 
-Moved here: [HTTP_SOCKS_PROTOCOLS.md](HTTP_SOCKS.md)
+Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
 
 ### Docker images
 
