@@ -9,7 +9,7 @@ path = Path(__file__).parent
 file = open(str(path.joinpath('config/config.json')), 'r')
 config = json.load(file)
 
-html = open(str(path.joinpath('../web/index.html')), 'r').read()
+html = open(str(path.joinpath('web/index.html')), 'r').read()
 
 ip = urlopen("http://ifconfig.io/ip").read().decode().rstrip()
 
