@@ -9,7 +9,7 @@ path = Path(__file__).parent
 file = open(str(path.joinpath('config/config.json')), 'r')
 config = json.load(file)
 
-html = open(str(path.joinpath('web/index.html')), 'r').read()
+html = open(str(path.joinpath('web/index.html')), 'r', encoding="utf-8").read()
 
 ip = urlopen("http://ifconfig.io/ip").read().decode().rstrip()
 
@@ -49,4 +49,4 @@ for inbound in config['inbounds']:
 
         html = html.replace("vmess://etc", link)
 
-open(str(path.joinpath('web/index.html')), 'w').write(html)
+open(str(path.joinpath('web/index.html')), 'w', encoding="utf-8").write(html)
