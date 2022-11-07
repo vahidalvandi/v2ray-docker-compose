@@ -101,6 +101,7 @@ Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
 
 ## More
 
+* Add bridge server to Outline: https://github.com/miladrahimi/outline-bridge-server
 * Setup V2Ray servers using Ansible: https://github.com/ohmydevops/v2ray-ansible
 * Read more about V2Ray: https://www.v2fly.org
 * Read more about V2Ray configurations: https://guide.v2fly.org
