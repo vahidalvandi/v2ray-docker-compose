@@ -38,7 +38,6 @@ This repository contains sample Docker Compose files to run V2Ray upstream and b
     * `<UPSTREAM-UUID>`: The generated UUID for the upstream server.
 1. Run `docker-compose up -d`. 
 1. (Optional) You can run `./v2ray-bridge-server/clients.py` to generate client configurations and links.
-1. (Optional) You can serve `./v2ray-bridge-server/web/index.html` to help your users.
 
 #### Clients
 
