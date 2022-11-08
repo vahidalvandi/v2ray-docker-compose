@@ -3,7 +3,7 @@
 This repository contains sample Docker Compose files to run V2Ray upstream and bridge servers.
 
 > **Note**
-> If you need to manage your users and their usage, I recommend using the [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server) repository instead.
+> If you need to manage your users and their usage, I recommend to see [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server) repository.
 
 ## Documentation
 
