@@ -1,6 +1,6 @@
-# V2Ray Docker Compose
+# V2Ray (V2Fly) Docker Compose
 
-This repository contains sample Docker Compose files to run V2Ray upstream and bridge servers.
+This repository contains sample Docker Compose files to run V2Ray (V2Fly) upstream and bridge servers.
 
 > **Note**
 > If you need to manage your users and their usage, I recommend to see [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server) repository.
@@ -63,7 +63,7 @@ Password: <SHADOWSOCKS-PASSWORD>
 
 ##### VMESS Protocol
 
-The VMESS proxy protocol is the primary protocol that V2Ray servers provide.
+The VMESS proxy protocol is the primary protocol that V2Ray (V2Fly) servers provide.
 We recommend these client applications:
 * [V2RayX for macOS](https://github.com/Cenmrev/V2RayX/releases)
 * [v2ray-core for Linux](https://github.com/v2ray/v2ray-core)
@@ -102,8 +102,8 @@ Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
 
 * [Docker Compose files to run an Outline bridge server](https://github.com/miladrahimi/outline-bridge-server)
 * [Setup V2Ray servers using Ansible](https://github.com/ohmydevops/v2ray-ansible)
-* [Read more about V2Ray](https://www.v2fly.org)
-* [Read more about V2Ray configurations](https://guide.v2fly.org)
+* [Read more about V2Fly](https://www.v2fly.org)
+* [Read more about V2Fly configurations](https://guide.v2fly.org)
 
 ## P.S.
 
