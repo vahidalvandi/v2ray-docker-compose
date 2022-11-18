@@ -87,6 +87,12 @@ Network: TCP
 
 Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
 
+#### Tips
+
+* Some hostings might ban your proxy traffic. Use an appropriate hosting.
+* Some Internet providers might ban Shadowsocks and VMESS protocols. Use an appropriate Internet provider.
+  See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
+
 ### Docker images
 
 * GitHub:
