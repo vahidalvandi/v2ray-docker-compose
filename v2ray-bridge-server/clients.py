@@ -10,7 +10,7 @@ path = Path(__file__).parent
 file = open(str(path.joinpath('config/config.json')), 'r', encoding='utf-8')
 config = json.load(file)
 
-ip = urlopen("http://ifconfig.io/ip").read().decode().rstrip()
+ip = urlopen("https://ipv4.icanhazip.com/").read().decode().rstrip()
 
 for inbound in config['inbounds']:
     if inbound['protocol'] == 'socks':
