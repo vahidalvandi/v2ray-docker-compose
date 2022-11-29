@@ -90,7 +90,7 @@ Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
 #### Tips
 
 * Some hostings might ban your proxy traffic. Use an appropriate hosting.
-* Some Internet providers might ban your proxy traffic. Use an appropriate Internet provider.
+* Some Internet providers might ban your proxy traffic. Changin AlterID could be helpful.
   See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
 
 ### Docker images
