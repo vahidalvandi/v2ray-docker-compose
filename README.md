@@ -1,6 +1,6 @@
-# V2Ray (V2Fly) Docker Compose
+# V2Ray Docker Compose
 
-This repository contains sample Docker Compose files to run V2Ray (V2Fly) upstream and bridge servers.
+This repository contains sample Docker Compose files to run V2Ray upstream and bridge servers.
 
 > **Note**
 > If you need to manage your users and their usage, see [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server) instead.
