@@ -68,25 +68,20 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 
 #### VMESS Protocol
 
-The VMESS proxy protocol is the primary protocol that V2Ray (V2Fly) servers provide.
-We recommend these client applications:
-* [Nekoray for macOS, Windows, and Linux](https://github.com/MatsuriDayo/nekoray/releases)
-* [Qv2ray for macOS, Windows, and Linux](https://qv2ray.net)
-* [V2RayX for macOS](https://github.com/Cenmrev/V2RayX/releases)
-* [v2ray-core for Linux](https://github.com/v2ray/v2ray-core)
-* [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
-* [v2rayNG for Android](https://github.com/2dust/v2rayNG)
+* [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
+* [Qv2ray](https://qv2ray.net) for macOS, Windows, and Linux
+* [V2RayX](https://github.com/Cenmrev/V2RayX/releases) for macOS
+* [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
+* [v2rayNG](https://github.com/2dust/v2rayNG) for Android
 
 #### Shadowsocks Protocol
 
-Shadowsocks is a popular proxy protocol with a variety of client applications.
-We recommend these client applications:
-* [Outline](https://getoutline.org/get-started/#step-3)
-* [Shadowsocks for macOS](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
-* [Shadowsocks for Linux](https://github.com/shadowsocks/shadowsocks-libev)
-* [Shadowsocks for Windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
-* [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
-* [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
+* [Outline](https://getoutline.org/get-started/#step-3) for macOS, Windows, and Linux
+* [Shadowsocks](https://github.com/shadowsocks/ShadowsocksX-NG/releases) for macOS
+* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-libev) for Linux
+* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases) for Windows
+* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-android/releases) for Android
+* [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
 
 #### HTTP/HTTPS & SOCKS Protocols
 
