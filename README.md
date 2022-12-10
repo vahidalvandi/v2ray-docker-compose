@@ -99,7 +99,8 @@ Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
 
 ### Docker images
 
-By default, this repository uses the GitHub registry. You can change it to Docker Hub.
+By default, this repository uses the GitHub registry.
+You can modify the Docker-compose file to use Docker Hub.
 
 * GitHub:
   * Image: ```ghcr.io/getimages/v2fly-core:v4.45.2```
