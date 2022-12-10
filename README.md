@@ -8,7 +8,7 @@ Both solutions rely on a bridge (relay) server/service accessible from clients a
 
 ### Solutions
 
-#### Bridge Server
+#### Bridge Server Solution
 
 This solution needs these two servers:
 
@@ -19,9 +19,18 @@ This solution needs these two servers:
 (Client) <-> [ Bridge Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
-#### CDN Service
+Pros:
+* No domain required.
+* No dependency on third-party services.
+* Support both Shdaowsocks and VMESS.
 
-This solution needs one server (upstream server) and a domain/subdomain.
+Cons:
+* An extra server as the bridge is required.
+* Two servers must be maintained.
+
+#### CDN Service Solution
+
+This solution needs only one server (upstream server) and a domain/subdomain.
 
 * Upstream Server: A server that has free access to the Internet.
 * CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com) or [ArvanCloud](//arvancloud.ir).
@@ -29,6 +38,15 @@ This solution needs one server (upstream server) and a domain/subdomain.
 ```
 (Client) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
 ```
+
+Pros:
+* Only one server is required.
+* Only one server must be maintained.
+
+Cons:
+* A domain/subdomain is required.
+* Depended on a third-party service (CDN).
+* Only VMESS protocol is supported.
 
 ### Setup Bridge Server Solution
 
