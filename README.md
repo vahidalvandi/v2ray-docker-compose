@@ -63,7 +63,7 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 1. Replace `<EXAMPLE.COM>` in the `caddy/Caddyfile` file with your domain/subdoamin.
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser. Wait until the homepage is loaded.
-1. Turn the proxy on in the CDN for the record.
+1. Turn the proxy on in the CDN service for the record.
 1. Run `./vmess.py` to generate VMESS url for your client application.
 
 ### Client Applications
