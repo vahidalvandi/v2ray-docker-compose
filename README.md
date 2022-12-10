@@ -53,7 +53,7 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 
 ### Setup Using CDN Service
 
-1. Create an `A` record in the CDN service pointing to your server IP address with the proxy off.
+1. Create an `A` record in the CDN service pointing to your server IP address with the proxy turned off.
 1. Install Docker and Docker-compose on your server.
 1. Copy the `v2ray-cdn-ready` directory into the server.
 1. Run ```cat /proc/sys/kernel/random/uuid``` command to generate a UUID.
