@@ -8,7 +8,7 @@ Both solutions rely on a bridge (relay) server/service accessible from clients a
 
 ### Solutions
 
-#### Bridge Server Solution
+#### Using Bridge Server
 
 This solution needs these two servers:
 
@@ -19,16 +19,7 @@ This solution needs these two servers:
 (Client) <-> [ Bridge Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
-Pros:
-* No domain required.
-* No dependency on third-party services.
-* Support both Shdaowsocks and VMESS.
-
-Cons:
-* An extra server as the bridge is required.
-* Two servers must be maintained.
-
-#### CDN Service Solution
+#### Using CDN Service
 
 This solution needs only one server (upstream server) and a domain/subdomain.
 
@@ -39,16 +30,7 @@ This solution needs only one server (upstream server) and a domain/subdomain.
 (Client) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
-Pros:
-* Only one server is required.
-* Only one server must be maintained.
-
-Cons:
-* A domain/subdomain is required.
-* Depended on a third-party service (CDN).
-* Only VMESS protocol is supported.
-
-### Setup Bridge Server Solution
+### Setup Using Bridge Server
 
 #### Upstream Server
 
@@ -70,7 +52,7 @@ Cons:
 1. Run `docker-compose up -d`. 
 1. (Optional) You can run `./v2ray-bridge-server/clients.py` to generate client configurations and links.
 
-### Setup CDN Service Solution
+### Setup Using CDN Service
 
 1. Create an `A` record in the CDN pointing to your server IP address with the proxy option off.
 1. Install Docker and Docker-compose.
@@ -95,18 +77,6 @@ We recommend these client applications:
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
 * [v2rayNG for Android](https://github.com/2dust/v2rayNG)
 
-You can configure your client application using these settings:
-
-```
-IP Address: <BRIDGE-IP>
-Port: 1310
-ID/UUID/UserID: <BRIDGE-UUID>
-Alter ID: 0
-Level: 0
-Security/Method/Encryption: aes-128-gcm
-Network: TCP
-```
-
 #### Shadowsocks Protocol
 
 Shadowsocks is a popular proxy protocol with a variety of client applications.
@@ -117,15 +87,6 @@ We recommend these client applications:
 * [Shadowsocks for Windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
 * [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
-
-You can configure your client application using these settings:
-
-```
-IP Address: <BRIDGE-IP>
-Port: 1210
-Encryption/Method/Algorithm: aes-128-gcm
-Password: <SHADOWSOCKS-PASSWORD>
-```
 
 #### HTTP/HTTPS & SOCKS Protocols
 
