@@ -9,7 +9,7 @@ without direct access to an upstream server (a server with access to free Intern
 
 #### Using Bridge Server
 
-This solution needs these two servers:
+In this solution, you need these two servers:
 
 * Upstream Server: A server that has access to the free Internet.
 * Bridge Server: A server that is available to clients and has access to the upstream server.
@@ -20,7 +20,7 @@ This solution needs these two servers:
 
 #### Using CDN Service
 
-This solution needs only one server (upstream server) and a domain/subdomain.
+In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
 * Upstream Server: A server that has free access to the Internet.
 * CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com) or [ArvanCloud](//arvancloud.ir).
@@ -49,19 +49,19 @@ This solution needs only one server (upstream server) and a domain/subdomain.
     * `<UPSTREAM-IP>`: The upstream server IP address like `13.13.13.13`.
     * `<UPSTREAM-UUID>`: The generated UUID for the upstream server.
 1. Run `docker-compose up -d`. 
-1. (Optional) You can run `./v2ray-bridge-server/clients.py` to generate client configurations and links.
+1. Run `./clients.py` to generate client configurations and links.
 
 ### Setup Using CDN Service
 
-1. Create an `A` record in the CDN pointing to your server IP address with the proxy option off.
-1. Install Docker and Docker-compose.
-1. Copy the `v2ray-cdn-ready` directory into the upstream server.
+1. Create an `A` record in the CDN service pointing to your server IP address with the proxy off.
+1. Install Docker and Docker-compose on your server.
+1. Copy the `v2ray-cdn-ready` directory into the server.
 1. Run ```cat /proc/sys/kernel/random/uuid``` command to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in the `v2ray/config/config.json` file with the generated UUID.
 1. Replace `<EXAMPLE.COM>` in the `caddy/Caddyfile` file with your domain/subdoamin.
 1. Run `docker-compose up -d`.
-1. Visit your domain/subdomain in your web browser, and wait for it to load the default HTML file.
-1. Turn the proxy option on in the CDN for the record.
+1. Visit your domain/subdomain in your web browser. Wait until the homepage is loaded.
+1. Turn the proxy on in the CDN for the record.
 1. Run `./vmess.py` to generate VMESS url for your client application.
 
 ### Client Applications
@@ -70,9 +70,10 @@ This solution needs only one server (upstream server) and a domain/subdomain.
 
 The VMESS proxy protocol is the primary protocol that V2Ray (V2Fly) servers provide.
 We recommend these client applications:
+* [Nekoray for macOS, Windows, and Linux](https://github.com/MatsuriDayo/nekoray/releases)
+* [Qv2ray for macOS, Windows, and Linux](https://qv2ray.net)
 * [V2RayX for macOS](https://github.com/Cenmrev/V2RayX/releases)
 * [v2ray-core for Linux](https://github.com/v2ray/v2ray-core)
-* [Qv2ray for Windows](https://qv2ray.net)
 * [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
 * [v2rayNG for Android](https://github.com/2dust/v2rayNG)
 
