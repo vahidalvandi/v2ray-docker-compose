@@ -70,7 +70,7 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 
 #### VMESS Protocol
 
-It is the list of recommended applications to use the VMESS protocol.
+This is the list of recommended applications to use the VMESS protocol:
 
 * [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
 * [Qv2ray](https://qv2ray.net) for macOS, Windows, and Linux
@@ -80,7 +80,7 @@ It is the list of recommended applications to use the VMESS protocol.
 
 #### Shadowsocks Protocol
 
-It is the list of recommended applications to use the Shadowsocks protocol.
+This is the list of recommended applications to use the Shadowsocks protocol:
 
 * [Outline](https://getoutline.org/get-started/#step-3) for macOS, Windows, and Linux
 * [Shadowsocks](https://github.com/shadowsocks/ShadowsocksX-NG/releases) for macOS
