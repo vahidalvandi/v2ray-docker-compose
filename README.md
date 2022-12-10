@@ -68,6 +68,8 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 
 #### VMESS Protocol
 
+It is the list of recommended applications to use the VMESS protocol.
+
 * [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
 * [Qv2ray](https://qv2ray.net) for macOS, Windows, and Linux
 * [V2RayX](https://github.com/Cenmrev/V2RayX/releases) for macOS
@@ -75,6 +77,8 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 * [v2rayNG](https://github.com/2dust/v2rayNG) for Android
 
 #### Shadowsocks Protocol
+
+It is the list of recommended applications to use the Shadowsocks protocol.
 
 * [Outline](https://getoutline.org/get-started/#step-3) for macOS, Windows, and Linux
 * [Shadowsocks](https://github.com/shadowsocks/ShadowsocksX-NG/releases) for macOS
@@ -94,6 +98,8 @@ Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
   See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
 
 ### Docker images
+
+By default, this repository uses the GitHub registry. You can change it to Docker Hub.
 
 * GitHub:
   * Image: ```ghcr.io/getimages/v2fly-core:v4.45.2```
