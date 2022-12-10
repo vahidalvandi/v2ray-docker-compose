@@ -1,16 +1,18 @@
 # V2Ray Docker Compose
 
-This repository contains sample Docker Compose files to run the V2Ray upstream, bridge, and CDN-ready servers.
+This repository introduces two V2Ray-based solutions to bypass censorship in highly restricted networks
+without direct access to an upstream server (a server with access to free Internet).
+Both solutions rely on a bridge (relay) server/service accessible from clients and able to connect to an upstream server.
 
 ## Documentation
 
-### Solutions to ByPass Internet Censorship
+### Solutions
 
 #### Bridge Server
 
 This solution needs these two servers:
 
-* Upstream Server: A server that has free access to the Internet.
+* Upstream Server: A server that has access to the free Internet.
 * Bridge Server: A server that is available to clients and has access to the upstream server.
 
 ```
