@@ -65,7 +65,7 @@ This solution needs only one server (upstream server) and a domain/subdomain.
 1. Turn the proxy option on in the CDN for the record.
 1. Run `./vmess.py` to generate VMESS url for your client application.
 
-### Setup Clients
+### Client Applications
 
 #### VMESS Protocol
 
