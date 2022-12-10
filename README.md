@@ -2,7 +2,6 @@
 
 This repository introduces two V2Ray-based solutions to bypass censorship in highly restricted networks
 without direct access to an upstream server (a server with access to free Internet).
-Both solutions rely on a bridge (relay) server/service accessible from clients and able to connect to an upstream server.
 
 ## Documentation
 
