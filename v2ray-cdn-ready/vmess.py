@@ -13,12 +13,10 @@ caddy = open(str(path.joinpath('caddy/Caddyfile')), 'r', encoding='utf-8').read(
 
 uuid = config['inbounds'][0]['settings']['clients'][0]['id']
 domain = caddy[:caddy.find(' {')]
-print(domain)
 
 j = json.dumps({
     "v": "2", "ps": domain, "add": domain, "port": "443", "id": uuid, "aid": "0", "net": "ws", "type": "none",
     "host": domain, "path": "/ws", "tls": "tls"
 })
 
-link = "vmess://" + base64.b64encode(j.encode('ascii')).decode('ascii')
-print("\nVMESS:\n" + link)
+print("vmess://" + base64.b64encode(j.encode('ascii')).decode('ascii'))
