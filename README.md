@@ -32,7 +32,7 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 ```
 
 
-This solution provides VMESS protocol over Websockets + TLS to be able to use CDN services.
+This solution provides VMESS over Websockets + TLS + CDN.
 [Read more...](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)
 
 ### Setup Using Bridge Server
