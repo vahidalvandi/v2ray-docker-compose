@@ -1,99 +1,110 @@
 # V2Ray Docker Compose
 
-This repository contains sample Docker Compose files to run V2Ray upstream and bridge servers.
-
-> **Note**
-> If you need to manage your users and their usage, see [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server) instead.
+This repository introduces two V2Ray-based solutions to bypass censorship in highly restricted networks
+without direct access to an upstream server (a server with access to free Internet).
+These solutions are 1. Using a bridge server, and 2. Using a CDN service.
 
 ## Documentation
 
-### Terminology
+### Setup V2Ray Using a Bridge Server
 
-* Upstream Server: A server that has free access to the Internet.
+In this solution, you need these two servers:
+
+* Upstream Server: A server that has access to the free Internet.
 * Bridge Server: A server that is available to clients and has access to the upstream server.
-* Client: A user-side application with access to the bridge server.
 
 ```
 (Client) <-> [ Bridge Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
-### Setup
+This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
 
-#### Upstream Server
+#### Setup Upstream Server
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-upstream-server` directory into the upstream server.
-1. Run ```cat /proc/sys/kernel/random/uuid``` command to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in the `config/config.json` file with the generated UUID.
+1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
+1. Replace `<UPSTREAM-UUID>` in `config/config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
-#### Bridge Server
+#### Setup Bridge Server
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-bridge-server` directory into the bridge server.
-1. Replace the following variables in the `config/config.json` file with appropriate values.
+1. Replace the following variables in `config/config.json` with appropriate values.
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
     * `<BRIDGE-UUID>`: A new UUID for bridge server (Run ```cat /proc/sys/kernel/random/uuid```).
-    * `<UPSTREAM-IP>`: The upstream server IP address like `13.13.13.13`.
-    * `<UPSTREAM-UUID>`: The generated UUID for the upstream server.
-1. Run `docker-compose up -d`. 
-1. (Optional) You can run `./v2ray-bridge-server/clients.py` to generate client configurations and links.
+    * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).
+    * `<UPSTREAM-UUID>`: The upstream server UUID from previous step.
+1. Run `docker-compose up -d`.
+1. Run `./clients.py` to generate client configurations and links.
 
-#### Clients
+### Setup V2Ray Using a CDN Service
 
-##### Shadowsocks Protocol
+In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
-Shadowsocks is a popular proxy protocol with a variety of client applications.
-We recommend these client applications:
-* [Outline](https://getoutline.org/get-started/#step-3)
-* [Shadowsocks for macOS](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
-* [Shadowsocks for Linux](https://github.com/shadowsocks/shadowsocks-libev)
-* [Shadowsocks for Windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
-* [Shadowsocks for Android](https://github.com/shadowsocks/shadowsocks-android/releases)
-* [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
-
-You can configure your client application using these settings:
+* Upstream Server: A server that has free access to the Internet.
+* CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com) or [ArvanCloud](//arvancloud.ir).
 
 ```
-IP Address: <BRIDGE-IP>
-Port: 1210
-Encryption/Method/Algorithm: aes-128-gcm
-Password: <SHADOWSOCKS-PASSWORD>
+(Client) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
-##### VMESS Protocol
 
-The VMESS proxy protocol is the primary protocol that V2Ray (V2Fly) servers provide.
-We recommend these client applications:
-* [V2RayX for macOS](https://github.com/Cenmrev/V2RayX/releases)
-* [v2ray-core for Linux](https://github.com/v2ray/v2ray-core)
-* [Qv2ray for Windows](https://qv2ray.net)
-* [ShadowLink for iOS](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518)
-* [v2rayNG for Android](https://github.com/2dust/v2rayNG)
+This solution provides VMESS over Websockets + TLS + CDN.
+[Read more...](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)
 
-You can configure your client application using these settings:
+Follow these steps:
 
-```
-IP Address: <BRIDGE-IP>
-Port: 1310
-ID/UUID/UserID: <BRIDGE-UUID>
-Alter ID: 0
-Level: 0
-Security/Method/Encryption: aes-128-gcm
-Network: TCP
-```
+1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
+1. Install Docker and Docker-compose on your server.
+1. Copy the `v2ray-cdn-ready` directory into the server.
+1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
+1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
+1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdoamin.
+1. Run `docker-compose up -d`.
+1. Visit your domain/subdomain in your web browser.
+   Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-cdn-ready/caddy/web/index.html) is loaded.
+1. In your CDN, turn the proxy option on for the record.
+1. Run `./vmess.py` to generate client configuration (link).
 
-##### HTTP/HTTPS & SOCKS Protocols
+### Client Applications
+
+#### VMESS Protocol
+
+This is the list of recommended applications to use the VMESS protocol:
+
+* [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
+* [Qv2ray](https://qv2ray.net) for macOS, Windows, and Linux
+* [V2RayX](https://github.com/Cenmrev/V2RayX/releases) for macOS
+* [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
+* [v2rayNG](https://github.com/2dust/v2rayNG) for Android
+
+#### Shadowsocks Protocol
+
+This is the list of recommended applications to use the Shadowsocks protocol:
+
+* [Outline](https://getoutline.org/get-started/#step-3) for macOS, Windows, and Linux
+* [Shadowsocks](https://github.com/shadowsocks/ShadowsocksX-NG/releases) for macOS
+* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-libev) for Linux
+* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases) for Windows
+* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-android/releases) for Android
+* [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
+
+#### HTTP/HTTPS & SOCKS Protocols
 
 Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
 
-#### Tips
+### Tips
 
 * Some hostings might ban your proxy traffic. Use an appropriate hosting.
 * Some Internet providers might ban your proxy traffic. Changin AlterID could be helpful.
   See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
 
 ### Docker images
+
+By default, this repository uses the GitHub registry.
+You can modify the Docker-compose file to use Docker Hub.
 
 * GitHub:
   * Image: ```ghcr.io/getimages/v2fly-core:v4.45.2```
@@ -107,11 +118,7 @@ Moved here: [HTTP_SOCKS.md](HTTP_SOCKS.md)
 ## More
 
 * [Docker Compose files to run an Outline bridge server](https://github.com/miladrahimi/outline-bridge-server)
+* [V2Ray Config Examples](https://github.com/xesina/v2ray-config-examples)
 * [Setup V2Ray servers using Ansible](https://github.com/ohmydevops/v2ray-ansible)
-* [Read more about V2Fly](https://www.v2fly.org)
-* [Read more about V2Fly configurations](https://guide.v2fly.org)
-
-## P.S.
-
-This repository is kind of forked from [v2ray-config-examples](https://github.com/xesina/v2ray-config-examples).
-Thanks to [@xesina](https://github.com/xesina) and other contributors.
+* [Read more about V2Fly and V2Ray](https://www.v2fly.org)
+* [Read more about V2Ray configurations](https://guide.v2fly.org)
