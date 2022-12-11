@@ -17,7 +17,7 @@ In this solution, you need these two servers:
 (Client) <-> [ Bridge Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
-This solution consists of two steps and provides original VMESS and Shadowsocks (AEAD) protocols.
+This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
 
 #### Setup Upstream Server
 
