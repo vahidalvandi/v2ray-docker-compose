@@ -63,7 +63,8 @@ Follow these steps:
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdoamin.
 1. Run `docker-compose up -d`.
-1. Visit your domain/subdomain in your web browser. Wait until the homepage is loaded.
+1. Visit your domain/subdomain in your web browser.
+   Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-cdn-ready/caddy/web/index.html) is loaded.
 1. In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
