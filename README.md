@@ -68,7 +68,7 @@ Follow these steps:
 1. In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
-### Setup Client Applications
+### Client Applications
 
 #### VMESS Protocol
 
