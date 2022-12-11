@@ -18,6 +18,8 @@ In this solution, you need these two servers:
 (Client) <-> [ Bridge Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
+This solution provides original VMESS and Shadowsocks (AEAD) protocols.
+
 #### Using CDN Service
 
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
