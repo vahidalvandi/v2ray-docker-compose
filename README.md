@@ -2,12 +2,11 @@
 
 This repository introduces two V2Ray-based solutions to bypass censorship in highly restricted networks
 without direct access to an upstream server (a server with access to free Internet).
+These solutions are 1. Using a bridge server, and 2. Using a CDN service.
 
 ## Documentation
 
-### Solutions
-
-#### Using Bridge Server
+### Setup V2Ray Using a Bridge Server
 
 In this solution, you need these two servers:
 
@@ -18,9 +17,29 @@ In this solution, you need these two servers:
 (Client) <-> [ Bridge Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
-This solution provides original VMESS and Shadowsocks (AEAD) protocols.
+This solution consists of two steps and provides original VMESS and Shadowsocks (AEAD) protocols.
 
-#### Using CDN Service
+#### Setup Upstream Server
+
+1. Install Docker and Docker-compose.
+1. Copy the `v2ray-upstream-server` directory into the upstream server.
+1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
+1. Replace `<UPSTREAM-UUID>` in `config/config.json` with the generated UUID.
+1. Run `docker-compose up -d`.
+
+#### Setup Bridge Server
+
+1. Install Docker and Docker-compose.
+1. Copy the `v2ray-bridge-server` directory into the bridge server.
+1. Replace the following variables in `config/config.json` with appropriate values.
+    * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
+    * `<BRIDGE-UUID>`: A new UUID for bridge server (Run ```cat /proc/sys/kernel/random/uuid```).
+    * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).
+    * `<UPSTREAM-UUID>`: The upstream server UUID from previous step.
+1. Run `docker-compose up -d`.
+1. Run `./clients.py` to generate client configurations and links.
+
+### Setup V2Ray Using a CDN Service
 
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
@@ -35,42 +54,20 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 This solution provides VMESS over Websockets + TLS + CDN.
 [Read more...](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)
 
-### Setup Using Bridge Server
+Follow these steps:
 
-#### Upstream Server
-
-1. Install Docker and Docker-compose.
-1. Copy the `v2ray-upstream-server` directory into the upstream server.
-1. Run ```cat /proc/sys/kernel/random/uuid``` command to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in the `config/config.json` file with the generated UUID.
-1. Run `docker-compose up -d`.
-
-#### Bridge Server
-
-1. Install Docker and Docker-compose.
-1. Copy the `v2ray-bridge-server` directory into the bridge server.
-1. Replace the following variables in the `config/config.json` file with appropriate values.
-    * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
-    * `<BRIDGE-UUID>`: A new UUID for bridge server (Run ```cat /proc/sys/kernel/random/uuid```).
-    * `<UPSTREAM-IP>`: The upstream server IP address like `13.13.13.13`.
-    * `<UPSTREAM-UUID>`: The generated UUID for the upstream server.
-1. Run `docker-compose up -d`. 
-1. Run `./clients.py` to generate client configurations and links.
-
-### Setup Using CDN Service
-
-1. Create an `A` record in the CDN service pointing to your server IP address with the proxy turned off.
+1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
 1. Copy the `v2ray-cdn-ready` directory into the server.
-1. Run ```cat /proc/sys/kernel/random/uuid``` command to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in the `v2ray/config/config.json` file with the generated UUID.
-1. Replace `<EXAMPLE.COM>` in the `caddy/Caddyfile` file with your domain/subdoamin.
+1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
+1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
+1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdoamin.
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser. Wait until the homepage is loaded.
-1. Turn the proxy on in the CDN service for the record.
-1. Run `./vmess.py` to generate VMESS url for your client application.
+1. In your CDN, turn the proxy option on for the record.
+1. Run `./vmess.py` to generate client configuration (link).
 
-### Client Applications
+### Setup Client Applications
 
 #### VMESS Protocol
 
