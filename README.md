@@ -76,7 +76,7 @@ Or if you need replace Caddy web-server with Nginx:
 1. Copy the `v2ray-nginx-ready` directory into the server.
 1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
-1. Replace `YOUR_DOMAIN` in `docker-compose.yml` with your domain/subdoamin.
+1. Replace `YOUR_DOMAIN` in `docker-compose.yml` with your domain/subdoamin.(For example: test.com without http:// or https://)
 1. Replace `YOUR_EMAIL` in `docker-compose.yml` with your email (For lets encrypt) 
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser.
