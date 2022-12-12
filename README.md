@@ -123,3 +123,8 @@ You can modify the Docker-compose file to use Docker Hub.
 * [Setup V2Ray servers using Ansible](https://github.com/ohmydevops/v2ray-ansible)
 * [Read more about V2Fly and V2Ray](https://www.v2fly.org)
 * [Read more about V2Ray configurations](https://guide.v2fly.org)
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=miladrahimi/v2ray-docker-compose&type=Date)](https://star-history.com/#miladrahimi/v2ray-docker-compose&Date)
