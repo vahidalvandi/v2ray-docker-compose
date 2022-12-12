@@ -8,7 +8,7 @@ from pathlib import Path
 # LOAD CONFIG FILE
 
 path = Path(__file__).parent
-file = open(str(path.joinpath('config/config.json')), 'r', encoding='utf-8')
+file = open(str(path.joinpath('v2ray/config/config.json')), 'r', encoding='utf-8')
 config = json.load(file)
 
 # INPUT: UPSTREAM-IP
@@ -73,7 +73,7 @@ for i, inbound in enumerate(config['inbounds']):
 # SAVE CONFIG FILE
 
 content = json.dumps(config, indent=2)
-open(str(path.joinpath('config/config.json')), 'w', encoding='utf-8').write(content)
+open(str(path.joinpath('v2ray/config/config.json')), 'w', encoding='utf-8').write(content)
 
 # PRINT OUT RESULT
 

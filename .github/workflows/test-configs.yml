@@ -1,18 +1,24 @@
 name: Test v2ray configs json format
 on:
   pull_request:
-    branches:    
+    branches:
       - master
 jobs:
   configs-check:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        configs: ["v2ray-docker-client", "v2ray-bridge-server", "v2ray-upstream-server"]    
+        configs: [
+          "v2ray-docker-client",
+          "v2ray-bridge-server",
+          "v2ray-upstream-server",
+          "v2ray-caddy-cdn",
+          "v2ray-nginx-cdn"
+        ]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: check json configs format
-        run: npm install jsonlint -g > '/dev/null' 2>&1 && jsonlint ./${{ matrix.configs }}/config/config.json
+        run: npm install jsonlint -g > '/dev/null' 2>&1 && jsonlint ./${{ matrix.configs }}/v2ray/config/config.json

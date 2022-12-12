@@ -24,14 +24,14 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-upstream-server` directory into the upstream server.
 1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in `config/config.json` with the generated UUID.
+1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
 #### Setup Bridge Server
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-bridge-server` directory into the bridge server.
-1. Replace the following variables in `config/config.json` with appropriate values.
+1. Replace the following variables in `v2ray/config/config.json` with appropriate values.
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
     * `<BRIDGE-UUID>`: A new UUID for bridge server (Run ```cat /proc/sys/kernel/random/uuid```).
     * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).

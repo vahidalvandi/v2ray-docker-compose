@@ -9,5 +9,5 @@ services:
     ports:
       - "1310:1310"
     volumes:
-      - ./config/:/etc/v2ray/
+      - ./v2ray/config/:/etc/v2ray/
       - ./logs:/var/log/v2ray/
