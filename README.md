@@ -54,11 +54,11 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 This solution provides VMESS over Websockets + TLS + CDN.
 [Read more...](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)
 
-Follow these steps (with Caddy web-server):
+Follow these steps for Caddy web server (easy option):
 
 1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
-1. Copy the `v2ray-cdn-ready` directory into the server.
+1. Copy the `v2ray-caddy-cdn` directory into the server.
 1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdoamin.
@@ -68,12 +68,11 @@ Follow these steps (with Caddy web-server):
 1. In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
-
-Or if you need replace Caddy web-server with Nginx:
+Or Follow these steps for NGINX web server (recommended option):
 
 1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
-1. Copy the `v2ray-nginx-ready` directory into the server.
+1. Copy the `v2ray-nginx-cdn` directory into the server.
 1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Replace `YOUR_DOMAIN` in `docker-compose.yml` with your domain/subdoamin.(For example: `test.com` without `http://` or `https://`)
