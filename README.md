@@ -44,7 +44,7 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
 * Upstream Server: A server that has free access to the Internet.
-* CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com) or [ArvanCloud](//arvancloud.ir).
+* CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com), [ArvanCloud](//arvancloud.ir) or [DerakCloud](//derak.cloud).
 
 ```
 (Client) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
@@ -54,7 +54,7 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 This solution provides VMESS over Websockets + TLS + CDN.
 [Read more...](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)
 
-Follow these steps:
+Follow these steps (with Caddy web-server):
 
 1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
@@ -65,6 +65,20 @@ Follow these steps:
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser.
    Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-cdn-ready/caddy/web/index.html) is loaded.
+1. In your CDN, turn the proxy option on for the record.
+1. Run `./vmess.py` to generate client configuration (link).
+
+
+Or if you need replace Caddy web-server with Nginx:
+
+1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
+1. Install Docker and Docker-compose on your server.
+1. Copy the `v2ray-nginx-ready` directory into the server.
+1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
+1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
+1. Replace `YOUR_DOMAIN` in `docker-compose.yml` with your domain/subdoamin.(For example: `test.com` without `http://` or `https://`)
+1. Replace `YOUR_EMAIL` in `docker-compose.yml` with your email (For lets encrypt) 
+1. Run `docker-compose up -d`.
 1. In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
