@@ -16,7 +16,7 @@ services:
       - './html:/usr/share/nginx/html'
 
   dockergen:
-      image: jwilder/docker-gen
+      image: jwilder/docker-gen:0.9-debian
       container_name: dockergen
       restart: always
       command: >-
@@ -29,7 +29,7 @@ services:
 
   nginx-proxy-acme:
       restart: always
-      image: nginxproxy/acme-companion
+      image: nginxproxy/acme-companion:2.2
       container_name: nginx-proxy-acme
       volumes:
         - '/var/run/docker.sock:/var/run/docker.sock:ro'
