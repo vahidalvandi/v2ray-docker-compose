@@ -44,7 +44,7 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
 * Upstream Server: A server that has free access to the Internet.
-* CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com) or [ArvanCloud](//arvancloud.ir).
+* CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com), [ArvanCloud](//arvancloud.ir) or [DerakCloud](//derak.cloud).
 
 ```
 (Client) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
