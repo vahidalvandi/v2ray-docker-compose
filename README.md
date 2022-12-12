@@ -79,8 +79,6 @@ Or if you need replace Caddy web-server with Nginx:
 1. Replace `YOUR_DOMAIN` in `docker-compose.yml` with your domain/subdoamin.(For example: `test.com` without `http://` or `https://`)
 1. Replace `YOUR_EMAIL` in `docker-compose.yml` with your email (For lets encrypt) 
 1. Run `docker-compose up -d`.
-1. Visit your domain/subdomain in your web browser.
-   Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-cdn-ready/caddy/web/index.html) is loaded.
 1. In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
