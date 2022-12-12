@@ -67,7 +67,7 @@ Follow these steps to setup V2Ray + Caddy + CDN:
 1. In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
-If you prefer NGINX instead of the Caddy web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
+If you prefer NGINX instead of the Caddy web server, read [V2RAY_NGINX_CDN.md](docs/V2RAY_NGINX_CDN.md) instead.
 
 ### Client Applications
 
