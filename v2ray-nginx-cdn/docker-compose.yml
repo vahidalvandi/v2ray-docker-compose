@@ -5,8 +5,8 @@ services:
     image: nginx:1.22.1
     container_name: nginx
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
     restart: always
     volumes:
       - '/var/run/docker.sock:/tmp/docker.sock:ro'
@@ -14,7 +14,6 @@ services:
       - './certs:/etc/nginx/certs'
       - './vhost:/etc/nginx/vhost.d'
       - './html:/usr/share/nginx/html'
-
   dockergen:
       image: jwilder/docker-gen:0.9-debian
       container_name: dockergen
