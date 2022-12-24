@@ -63,7 +63,7 @@ Follow these steps to setup V2Ray + Caddy + CDN:
 1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdoamin.
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser.
-   Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-cdn-ready/caddy/web/index.html) is loaded.
+   Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-caddy-cdn/caddy/web/index.html) is loaded.
 1. In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
