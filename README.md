@@ -85,7 +85,7 @@ This is the list of recommended applications to use the VMESS protocol:
 
 This is the list of recommended applications to use the Shadowsocks protocol:
 
-* [Outline](https://getoutline.org/get-started/#step-3) for macOS, Windows, and Linux
+* [Outline](https://getoutline.org/get-started/#step-3) for all platforms
 * [Shadowsocks](https://github.com/shadowsocks/ShadowsocksX-NG/releases) for macOS
 * [Shadowsocks](https://github.com/shadowsocks/shadowsocks-libev) for Linux
 * [Shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases) for Windows
