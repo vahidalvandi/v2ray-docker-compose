@@ -86,10 +86,10 @@ This is the list of recommended applications to use the VMESS protocol:
 This is the list of recommended applications to use the Shadowsocks protocol:
 
 * [Outline](https://getoutline.org/get-started/#step-3) for all platforms
-* [Shadowsocks](https://github.com/shadowsocks/ShadowsocksX-NG/releases) for macOS
-* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-libev) for Linux
-* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases) for Windows
-* [Shadowsocks](https://github.com/shadowsocks/shadowsocks-android/releases) for Android
+* [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG/releases) for macOS
+* [shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev) for Linux
+* [shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
+* [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
 
 #### HTTP/HTTPS & SOCKS Protocols
