@@ -17,7 +17,7 @@ domain = dockerCompose["services"]["v2ray"]["environment"][1].split('=')[1];
 
 j = json.dumps({
     "v": "2", "ps": domain, "add": domain, "port": "443", "id": uuid, "aid": "0", "net": "ws", "type": "none",
-    "host": domain, "path": "/ws", "tls": "tls"
+    "host": domain, "path": "/", "tls": "tls"
 })
 
 print("vmess://" + base64.b64encode(j.encode('ascii')).decode('ascii'))
