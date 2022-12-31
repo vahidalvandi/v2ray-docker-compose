@@ -68,7 +68,7 @@ Follow these steps to setup V2Ray + Caddy + CDN:
 
 If you prefer NGINX instead of the Caddy web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
 
-### V2Ray as Outline Bridge Server (Recommended)
+### V2Ray as Outline Bridge Server
 
 You need two servers (upstream and bridge servers) in this solution.
 You must install the Outline proxy on the upstream server and the V2Ray proxy on the bridge server.
