@@ -1,8 +1,7 @@
 # V2Ray Docker Compose
 
-This repository introduces two V2Ray-based solutions to bypass censorship in highly restricted networks
-without direct access to an upstream server (a server with access to free Internet).
-These solutions are 1. Using a bridge server, and 2. Using a CDN service.
+This repository introduces V2Ray-based solutions to bypass censorship in highly restricted networks
+without direct/safe/stable access to an upstream server (a server with access to free Internet).
 
 ## Documentation
 
