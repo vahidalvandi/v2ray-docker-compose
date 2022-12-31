@@ -1,7 +1,7 @@
 # V2Ray Docker Compose
 
 This repository introduces V2Ray-based solutions to bypass limitations in highly restricted networks
-without direct/safe/stable access to upstream servers ( servers with access to free Internet).
+without direct/safe/stable access to upstream servers (servers with access to free Internet).
 
 ## Documentation
 
@@ -72,8 +72,8 @@ If you prefer NGINX instead of the Caddy web server, read [V2RAY_NGINX_CDN](docs
 
 You need two servers (upstream and bridge servers) in this solution.
 You must install the Outline proxy on the upstream server and the V2Ray proxy on the bridge server.
-The Outline Manager app gives you a well designed panel to manage your users and consumed traffic.
-This solution is moved to this separated repository:
+The Outline Manager app gives you a well-designed panel to manage your users and consumed traffic.
+This solution is moved to this separate repository:
 
 https://github.com/miladrahimi/outline-bridge-server
 
@@ -100,7 +100,7 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 * [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
 
-#### HTTP/HTTPS & SOCKS Protocols
+#### HTTP and SOCKS Protocols
 
 Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
 
@@ -110,7 +110,7 @@ Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
 * Some Internet providers might ban your proxy traffic. Changin AlterID could be helpful.
   See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
 
-### Docker images
+### Docker Images
 
 By default, this repository uses the GitHub registry.
 You can modify the Docker-compose file to use Docker Hub.
@@ -136,4 +136,4 @@ You can modify the Docker-compose file to use Docker Hub.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=miladrahimi/v2ray-docker-compose&type=Date)](https://star-history.com/#miladrahimi/v2ray-docker-compose&Date)
+[![Chart](https://api.star-history.com/svg?repos=miladrahimi/v2ray-docker-compose)](https://star-history.com/#miladrahimi/v2ray-docker-compose)
