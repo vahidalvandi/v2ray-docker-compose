@@ -1,11 +1,11 @@
 # V2Ray Docker Compose
 
-This repository introduces V2Ray-based solutions to bypass censorship in highly restricted networks
-without direct/safe/stable access to an upstream server (a server with access to free Internet).
+This repository introduces V2Ray-based solutions to bypass limitations in highly restricted networks
+without direct/safe/stable access to upstream servers ( servers with access to free Internet).
 
 ## Documentation
 
-### Setup V2Ray Using a Bridge Server
+### V2Ray Upsream and Bridge Servers
 
 In this solution, you need these two servers:
 
@@ -18,15 +18,15 @@ In this solution, you need these two servers:
 
 This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
 
-#### Setup Upstream Server
+#### 1) Setup Upstream Server
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-upstream-server` directory into the upstream server.
-1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
+1. Run ```cat /proc/sys/kernel/random/uuid``` in your terminal to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
-#### Setup Bridge Server
+#### 2) Setup Bridge Server
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-bridge-server` directory into the bridge server.
@@ -38,7 +38,7 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 1. Run `docker-compose up -d`.
 1. Run `./clients.py` to generate client configurations and links.
 
-### Setup V2Ray Using a CDN Service
+### V2Ray Behind a CDN Service
 
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
