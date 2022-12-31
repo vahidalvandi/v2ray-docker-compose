@@ -118,11 +118,12 @@ You can modify the Docker-compose file to use Docker Hub.
 
 ## More
 
-* [Docker Compose files to run an Outline bridge server](https://github.com/miladrahimi/outline-bridge-server)
+* [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 * [V2Ray Config Examples](https://github.com/xesina/v2ray-config-examples)
-* [Setup V2Ray servers using Ansible](https://github.com/ohmydevops/v2ray-ansible)
-* [Read more about V2Fly and V2Ray](https://www.v2fly.org)
-* [Read more about V2Ray configurations](https://guide.v2fly.org)
+* [NekoRay Installer (for Linux)](https://github.com/ohmydevops/nekoray-installer)
+* [V2Ray Ansible](https://github.com/ohmydevops/v2ray-ansible)
+* [V2Fly (V2Ray)](https://www.v2fly.org)
+* [V2Fly (V2Ray) configurations](https://guide.v2fly.org)
 
 
 ## Star History
