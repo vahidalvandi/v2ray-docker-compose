@@ -68,7 +68,7 @@ Follow these steps to setup V2Ray + Caddy + CDN:
 
 If you prefer NGINX instead of the Caddy web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
 
-Please check (CDN Free Traffic Plans)[//github.com/miladrahimi/v2ray-docker-compose/discussions/89].
+Please check [CDN Free Traffic Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89).
 
 ### V2Ray as Outline Bridge Server
 
