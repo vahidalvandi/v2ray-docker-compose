@@ -18,7 +18,7 @@ In this solution, you need these two servers:
 
 This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
 
-#### 1) Setup Upstream Server
+**Step 1: Setup Upstream Server**
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-upstream-server` directory into the upstream server.
@@ -26,7 +26,7 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
-#### 2) Setup Bridge Server
+**Step 2: Setup Bridge Server**
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-bridge-server` directory into the bridge server.
@@ -67,6 +67,15 @@ Follow these steps to setup V2Ray + Caddy + CDN:
 1. Run `./vmess.py` to generate client configuration (link).
 
 If you prefer NGINX instead of the Caddy web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
+
+### V2Ray as Outline Bridge Server (Recommended)
+
+You need two servers (upstream and bridge servers) in this solution.
+You must install the Outline proxy on the upstream server and the V2Ray proxy on the bridge server.
+The Outline Manager app gives you a well designed panel to manage your users and consumed traffic.
+This solution is moved to this separated repository:
+
+https://github.com/miladrahimi/outline-bridge-server
 
 ### Client Applications
 
