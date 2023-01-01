@@ -9,16 +9,16 @@ echo -e "Updating your Docker registry to docker.iranserver.com mrirror ...\n"
 
 if [ ! -f "$DOCKER_DAEMON_FILE" ]; then
   echo -e "Creating your docker daemon config file ...\n"
-  touch /etc/docker/daemon.json
+  sudo touch $DOCKER_DAEMON_FILE
 fi
 
-echo -e "Backuping your current /etc/docker/daemon.json file into the /etc/docker/daemon.json.old ...\n"
-sudo cp /etc/docker/daemon.json /etc/docker/daemon.json.old
+echo -e "Backuping your current $DOCKER_DAEMON_FILE file into the $DOCKER_DAEMON_FILE.old ...\n"
+sudo cp $DOCKER_DAEMON_FILE $DOCKER_DAEMON_FILE.old
 
 
 sudo bash -c "cat <<EOT > $DOCKER_DAEMON_FILE
 {
-  "registry-mirrors": [\"https://docker.iranserver.com\"]
+  \"registry-mirrors\": [\"https://docker.iranserver.com\"]
 }
 EOT"
 
