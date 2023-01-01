@@ -82,10 +82,10 @@ Follow these steps to setup V2Ray + Caddy (Web server) + CDN:
 1. In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
-If you prefer NGINX instead of the Caddy web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
+If you prefer NGINX as web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
 
 Some CDN services don't offer unlimited traffic for free plans.
-Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89)
+Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89).
 
 #### V2Ray as Outline Bridge Server
 
