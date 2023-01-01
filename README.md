@@ -52,7 +52,7 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 This solution provides VMESS over Websockets + TLS + CDN.
 [Read more...](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)
 
-Follow these steps to setup V2Ray + Caddy + CDN:
+Follow these steps to setup V2Ray + Caddy (Web server) + CDN:
 
 1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
