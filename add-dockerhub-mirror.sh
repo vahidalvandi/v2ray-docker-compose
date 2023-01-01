@@ -14,6 +14,6 @@ sudo cat <<EOT > /etc/docker/daemon.json
 EOT
 
 echo -e "Restarting your docker daemon ...\n"
-sudo systemctl daemon-reload && systemctl restart docker
+sudo systemctl restart docker
 
 echo -e "Done! for test: 'docker run hello-world'\n"
