@@ -3,9 +3,25 @@
 This repository introduces V2Ray-based solutions to bypass limitations in highly restricted networks
 without direct/safe/stable access to upstream servers (servers with access to free Internet).
 
+## Table of contents
+
+* [Documentation](#documentation)
+  * [Server Solutions](#server-solutions)
+    * [V2Ray Upsream and Bridge Servers](#v2ray-upsream-and-bridge-servers)
+    * [V2Ray Behind a CDN Service](#v2ray-behind-a-cdn-service)
+    * [V2Ray as Outline Bridge Server](#v2ray-as-outline-bridge-server)
+  * [Client Applications](#client-applications)
+    * [VMESS Protocol](#vmess-protocol)
+    * [Shadowsocks Protocol](#shadowsocks-protocol)
+    * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
+* [More](#more)
+* [Star History](#star-history)
+
 ## Documentation
 
-### V2Ray Upsream and Bridge Servers
+### Server Solutions
+
+#### V2Ray Upsream and Bridge Servers
 
 In this solution, you need these two servers:
 
@@ -18,7 +34,7 @@ In this solution, you need these two servers:
 
 This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
 
-**Step 1: Setup Upstream Server**
+Step 1: Setup Upstream Server
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-upstream-server` directory into the upstream server.
@@ -26,7 +42,7 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
-**Step 2: Setup Bridge Server**
+Step 2: Setup Bridge Server
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-bridge-server` directory into the bridge server.
@@ -38,7 +54,7 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 1. Run `docker-compose up -d`.
 1. Run `./clients.py` to generate client configurations and links.
 
-### V2Ray Behind a CDN Service
+#### V2Ray Behind a CDN Service
 
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
@@ -71,12 +87,12 @@ If you prefer NGINX instead of the Caddy web server, read [V2RAY_NGINX_CDN](docs
 Some CDN services don't offer unlimited traffic for free plans.
 Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89)
 
-### V2Ray as Outline Bridge Server
+#### V2Ray as Outline Bridge Server
 
 You need two servers (upstream and bridge servers) in this solution.
 You must install the Outline proxy on the upstream server and the V2Ray proxy on the bridge server.
 The Outline Manager app gives you a well-designed panel to manage your users and consumed traffic.
-This solution is moved to this separate repository:
+This solution is moved to this repository:
 
 https://github.com/miladrahimi/outline-bridge-server
 
