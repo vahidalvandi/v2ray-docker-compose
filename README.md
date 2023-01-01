@@ -89,12 +89,7 @@ Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compos
 
 #### V2Ray as Outline Bridge Server
 
-You need two servers (upstream and bridge servers) in this solution.
-You must install the Outline proxy on the upstream server and the V2Ray proxy on the bridge server.
-The Outline Manager app gives you a well-designed panel to manage your users and consumed traffic.
-This solution is moved to this repository:
-
-https://github.com/miladrahimi/outline-bridge-server
+Moved here: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
 ### Client Applications
 
