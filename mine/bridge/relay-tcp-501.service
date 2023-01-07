@@ -1,0 +1,10 @@
+[Unit]
+Description=TCP Relay
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=socat -d -d TCP-LISTEN:501,fork,reuseaddr TCP:<UPSTREAM-IP>:501
+
+[Install]
+WantedBy=multi-user.target
