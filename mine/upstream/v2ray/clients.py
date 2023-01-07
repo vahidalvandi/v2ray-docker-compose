@@ -9,7 +9,7 @@ vmessTag = 'my-vmess'
 ssTag = 'my-shadowsocks'
 domain = '<DOMAIN.IR>'
 bridgeIP = '<BRIDGE-IP>'
-bridgePort = '<BRIDGE-PORT>'
+ssBridgePort = '<BRIDGE-PORT-FOR-SS>'
 
 path = Path(__file__).parent
 
@@ -28,5 +28,5 @@ print("vmess://" + base64.b64encode(vmessJson.encode('ascii')).decode('ascii'))
 print()
 
 auth = base64.b64encode(("chacha20-ietf-poly1305:" + password).encode('ascii')).decode('ascii')
-print("ss://" + auth + "@" + bridgeIP + ":" + bridgePort + "/?#" + ssTag)
+print("ss://" + auth + "@" + bridgeIP + ":" + ssBridgePort + "/?#" + ssTag)
 print()
