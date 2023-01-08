@@ -5,7 +5,6 @@ without direct/safe/stable access to upstream servers (servers with access to fr
 
 ## Table of contents
 
-* [Documentation](#documentation)
   * [Server Solutions](#server-solutions)
     * [V2Ray Upsream and Bridge Servers](#v2ray-upsream-and-bridge-servers)
     * [V2Ray Behind a CDN Service](#v2ray-behind-a-cdn-service)
@@ -14,14 +13,14 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
-* [More](#more)
-* [Star History](#star-history)
+  * [Tips](#tips)
+  * [Docker Images](#docker-images)
+  * [More](#more)
+  * [Star History](#star-history)
 
-## Documentation
+## Server Solutions
 
-### Server Solutions
-
-#### V2Ray Upsream and Bridge Servers
+### V2Ray Upsream and Bridge Servers
 
 In this solution, you need these two servers:
 
@@ -54,7 +53,7 @@ Step 2: Setup Bridge Server
 1. Run `docker-compose up -d`.
 1. Run `./clients.py` to generate client configurations and links.
 
-#### V2Ray Behind a CDN Service
+### V2Ray Behind a CDN Service
 
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
@@ -91,13 +90,13 @@ You don't need to turn the cloud (proxy) on in your CDN (step 9) when the Intern
 When it's off, clients connect to the server directly.
 CDN services also don't charge you any fee.
 
-#### V2Ray as Outline Bridge Server
+### V2Ray as Outline Bridge Server
 
 Moved here: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
-### Client Applications
+## Client Applications
 
-#### VMESS Protocol
+### VMESS Protocol
 
 This is the list of recommended applications to use the VMESS protocol:
 
@@ -107,7 +106,7 @@ This is the list of recommended applications to use the VMESS protocol:
 * [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
 * [v2rayNG](https://github.com/2dust/v2rayNG) for Android
 
-#### Shadowsocks Protocol
+### Shadowsocks Protocol
 
 This is the list of recommended applications to use the Shadowsocks protocol:
 
@@ -118,17 +117,17 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 * [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
 
-#### HTTP and SOCKS Protocols
+### HTTP and SOCKS Protocols
 
 Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
 
-### Tips
+## Tips
 
 * Some hostings might ban your proxy traffic. Use an appropriate hosting.
 * Some Internet providers might ban your proxy traffic. Changin AlterID could be helpful.
   See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
 
-### Docker Images
+## Docker Images
 
 By default, this repository uses the GitHub registry.
 You can modify the Docker-compose file to use Docker Hub.
