@@ -89,7 +89,7 @@ If you prefer NGINX as web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.m
 Some CDN services don't offer unlimited traffic for free plans.
 Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89).
 
-You don't need to turn the cloud (proxy) on in your CDN (step 9) when the Internet is not blocked.
+You don't need to turn the cloud (proxy) on in your CDN (step 10) when the Internet is not blocked.
 When it's off, clients connect to the server directly.
 CDN services also don't charge you any fee.
 
