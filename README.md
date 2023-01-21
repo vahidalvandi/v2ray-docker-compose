@@ -92,7 +92,7 @@ Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compos
 You don't need to turn the cloud (proxy) on in your CDN (step 10) when the Internet is not blocked.
 When it's off, clients connect to the server directly and CDN services also don't charge you any fee.
 
-### V2Ray as Outline Bridge Server
+### V2Ray as Outline Bridge Server (Recommended)
 
 Moved here: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
