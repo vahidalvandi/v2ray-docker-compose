@@ -8,7 +8,7 @@ without direct/safe/stable access to upstream servers (servers with access to fr
   * [Server Solutions](#server-solutions)
     * [V2Ray Upsream and Bridge Servers](#v2ray-upsream-and-bridge-servers)
     * [V2Ray Behind a CDN Service](#v2ray-behind-a-cdn-service)
-    * [V2Ray as Outline Bridge Server](#v2ray-as-outline-bridge-server)
+    * [V2Ray as Outline Bridge Server (Rcommended)](#v2ray-as-outline-bridge-server)
   * [Client Applications](#client-applications)
     * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
