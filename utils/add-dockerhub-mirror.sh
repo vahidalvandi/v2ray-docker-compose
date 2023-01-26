@@ -5,7 +5,13 @@ DOCKER_DAEMON_FILE="/etc/docker/daemon.json"
 
 # Docs: https://mirror.iranserver.com/docker/
 
-echo -e "Updating your Docker registry to docker.iranserver.com mrirror ...\n"
+echo -e "Use this script only in iran bridge servers.\n"
+read -p "Continue (y/n)?" choice
+case "$choice" in 
+  y|Y ) echo -e "Updating your Docker registry to docker.iranserver.com mrirror ...\n" ;;
+  n|N ) echo "Exiting ..." && exit;;
+  * ) echo "Invalid" && exit;;
+esac
 
 if [ ! -f "$DOCKER_DAEMON_FILE" ]; then
   echo -e "Creating your docker daemon config file ...\n"
