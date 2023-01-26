@@ -33,6 +33,6 @@ if isUsingCloudFlareCDNProxy == 'yes':
     print("\nGet latest data from http://bot.sudoer.net/best.cf.iran ...\n")
     enhancedIPList = []
     for line in urllib.request.urlopen("http://bot.sudoer.net/best.cf.iran"):
-        print("Operator -> " + line.split()[0].decode("utf-8")  + " Config:\n" + config_generator(domain, uuid, line.split()[0].decode("utf-8"), line.split()[1].decode("utf-8")) + "\n" )
+        print(line.split()[0].decode("utf-8")  + " ISP. " + "Config for copy/paste:\n" + config_generator(domain, uuid, line.split()[0].decode("utf-8"), line.split()[1].decode("utf-8")) + "\n" )
 else:
     print(config_generator(domain, uuid))
