@@ -21,7 +21,7 @@ def config_generator(domain, uuid, operatorName="", ip=""):
 path = Path(__file__).parent
 v2ray_config_file = open(str(path.joinpath('v2ray/config/config.json')), 'r', encoding='utf-8')
 v2ray_config = json.load(v2ray_config_file)
-with open('docker-compose.yml', 'r') as f:
+with open(str(path.joinpath('docker-compose.yml')), 'r') as f:
     dockerCompose = yaml.safe_load(f)
 
 uuid = v2ray_config['inbounds'][0]['settings']['clients'][0]['id']
