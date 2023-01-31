@@ -1,3 +1,7 @@
+# Why we need subscription link?
+
+What if your settings change frequently? Generating new settings and copying and pasting isn't always convenient or easy. What if our changes are always accessible by a link, and we subscribe to that link? Yeah! This is a better solution.
+
 # How to create V2Ray subscription server? (Concept)
 
 

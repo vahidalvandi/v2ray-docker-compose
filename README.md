@@ -13,7 +13,7 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
-  * [Subscription link (Concept)](docs/SUB.md)
+  * [Subscription link (Concept)](docs/SUBSCRIPTION_LINK.md)
   * [Tips](#tips)
   * [Docker Images](#docker-images)
   * [More](#more)
