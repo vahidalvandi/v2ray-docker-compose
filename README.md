@@ -75,7 +75,7 @@ Follow these steps to setup V2Ray + Caddy (Web server) + CDN:
 1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
 1. Copy the `v2ray-caddy-cdn` directory into the server.
-1. Run ```./bbr.sh``` to speed up server network.
+1. Run ```./utils/bbr.sh``` to speed up server network.
 1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdoamin.
