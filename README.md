@@ -37,7 +37,7 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 Step 1: Setup Upstream Server
 
 1. Install Docker and Docker-compose.
-1. Copy the `v2ray-upstream-server` directory into the upstream server.
+1. Copy the `v2ray-upstream-server` and `utils` directories into the upstream server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
 1. Run ```cat /proc/sys/kernel/random/uuid``` in your terminal to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
@@ -46,7 +46,7 @@ Step 1: Setup Upstream Server
 Step 2: Setup Bridge Server
 
 1. Install Docker and Docker-compose.
-1. Copy the `v2ray-bridge-server` directory into the bridge server.
+1. Copy the `v2ray-bridge-server` and `utils` directories into the bridge server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
 1. Replace the following variables in `v2ray/config/config.json` with appropriate values.
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
@@ -74,7 +74,7 @@ Follow these steps to setup V2Ray + Caddy (Web server) + CDN:
 
 1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
-1. Copy the `v2ray-caddy-cdn` directory into the server.
+1. Copy the `v2ray-caddy-cdn` and `utils` directories into the server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
 1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
