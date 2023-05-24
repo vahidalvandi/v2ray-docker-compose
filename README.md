@@ -13,7 +13,7 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
-  * [Subscription link (Concept)](docs/SUBSCRIPTION_LINK.md)
+  * [Subscription Link](#subscription_link.md)
   * [Tips](#tips)
   * [Docker Images](#docker-images)
   * [More](#more)
@@ -124,10 +124,14 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 
 Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
 
+### Subscription Link
+
+Moved here: [SUBSCRIPTION_LINK](docs/SUBSCRIPTION_LINK.md)
+
 ## Tips
 
 * Some hostings might ban your proxy traffic. Use an appropriate hosting.
-* Some Internet providers might ban your proxy traffic. Changin AlterID could be helpful.
+* Some Internet providers might ban your proxy traffic. Changing AlterID could be helpful.
   See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
 
 ## Docker Images
