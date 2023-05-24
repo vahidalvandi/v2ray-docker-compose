@@ -13,7 +13,7 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
-  * [Subscription Link](##subscription-link)
+  * [Subscription Link](#subscription-link)
   * [Tips](#tips)
   * [Docker Images](#docker-images)
   * [More](#more)
@@ -124,7 +124,7 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 
 Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
 
-### Subscription Link
+## Subscription Link
 
 Moved here: [SUBSCRIPTION_LINK](docs/SUBSCRIPTION_LINK.md)
 
