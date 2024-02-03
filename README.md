@@ -52,7 +52,7 @@ Step 2: Setup Relay Server
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
     * `<BRIDGE-UUID>`: A new UUID for relay server (Run ```cat /proc/sys/kernel/random/uuid```).
     * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).
-    * `<UPSTREAM-UUID>`: The upstream server UUID from previous step.
+    * `<UPSTREAM-UUID>`: The upstream server UUID from the previous step.
 1. Run `docker-compose up -d`.
 1. Run `./clients.py` to generate client configurations and links.
 
@@ -70,7 +70,7 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 This solution provides VMESS over Websockets + TLS + CDN.
 [Read more...](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)
 
-Follow these steps to setup V2Ray + Caddy (Web server) + CDN:
+Follow these steps to set up V2Ray + Caddy (Web server) + CDN:
 
 1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
@@ -78,7 +78,7 @@ Follow these steps to setup V2Ray + Caddy (Web server) + CDN:
 1. Run ```./utils/bbr.sh``` to speed up server network.
 1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
-1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdoamin.
+1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdomain.
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser.
    Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-caddy-cdn/caddy/web/index.html) is loaded.
@@ -104,8 +104,6 @@ Moved here: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridg
 This is the list of recommended applications to use the VMESS protocol:
 
 * [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
-* [Qv2ray](https://qv2ray.net) for macOS, Windows, and Linux
-* [V2RayX](https://github.com/Cenmrev/V2RayX/releases) for macOS
 * [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
 * [v2rayNG](https://github.com/2dust/v2rayNG) for Android
 
@@ -130,7 +128,7 @@ Moved here: [SUBSCRIPTION_LINK](docs/SUBSCRIPTION_LINK.md)
 
 ## Tips
 
-* Some hostings might ban your proxy traffic. Use an appropriate hosting.
+* Some hostings might ban your proxy traffic. You can use an appropriate hosting.
 * Some Internet providers might ban your proxy traffic. Changing AlterID could be helpful.
   See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
 
