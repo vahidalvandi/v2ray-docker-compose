@@ -6,9 +6,9 @@ without direct/safe/stable access to upstream servers (servers with access to fr
 ## Table of contents
 
   * [Server Solutions](#server-solutions)
-    * [V2Ray Upsream and Bridge Servers](#v2ray-upsream-and-bridge-servers)
+    * [V2Ray Upsream and Relay Servers](#v2ray-upsream-and-relay-servers)
     * [V2Ray Behind a CDN Service](#v2ray-behind-a-cdn-service)
-    * [V2Ray as Outline Bridge Server (Recommended)](#v2ray-as-outline-bridge-server-recommended)
+    * [V2Ray as Outline Bridge](#v2ray-as-outline-bridge)
   * [Client Applications](#client-applications)
     * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
@@ -21,15 +21,15 @@ without direct/safe/stable access to upstream servers (servers with access to fr
 
 ## Server Solutions
 
-### V2Ray Upsream and Bridge Servers
+### V2Ray Upsream and Relay Servers
 
 In this solution, you need these two servers:
 
 * Upstream Server: A server that has access to the free Internet.
-* Bridge Server: A server that is available to clients and has access to the upstream server.
+* Relay Server: A server that is available to clients and has access to the upstream server.
 
 ```
-(Client) <-> [ Bridge Server ] <-> [ Upstream Server ] <-> (Internet)
+(Client) <-> [ Relay Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
 This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
@@ -43,14 +43,14 @@ Step 1: Setup Upstream Server
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
-Step 2: Setup Bridge Server
+Step 2: Setup Relay Server
 
 1. Install Docker and Docker-compose.
-1. Copy the `v2ray-bridge-server` and the `utils` directories into the bridge server.
+1. Copy the `v2ray-relay-server` and the `utils` directories into the relay server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
 1. Replace the following variables in `v2ray/config/config.json` with appropriate values.
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
-    * `<BRIDGE-UUID>`: A new UUID for bridge server (Run ```cat /proc/sys/kernel/random/uuid```).
+    * `<BRIDGE-UUID>`: A new UUID for relay server (Run ```cat /proc/sys/kernel/random/uuid```).
     * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).
     * `<UPSTREAM-UUID>`: The upstream server UUID from previous step.
 1. Run `docker-compose up -d`.
@@ -93,7 +93,7 @@ Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compos
 You don't need to turn the cloud (proxy) on in your CDN (step 10) when the Internet is not blocked.
 When it's off, clients connect to the server directly and CDN services also don't charge you any fee.
 
-### V2Ray as Outline Bridge Server (Recommended)
+### V2Ray as Outline Bridge
 
 Moved here: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
