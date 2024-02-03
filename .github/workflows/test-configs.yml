@@ -12,7 +12,7 @@ jobs:
       matrix:
         configs: [
           "v2ray-docker-client",
-          "v2ray-bridge-server",
+          "v2ray-relay-server",
           "v2ray-upstream-server",
           "v2ray-caddy-cdn",
           "v2ray-nginx-cdn"
