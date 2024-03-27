@@ -26,7 +26,7 @@ without direct/safe/stable access to upstream servers (servers with access to fr
 In this solution, you need these two servers:
 
 * Upstream Server: A server that has access to the free Internet.
-* Relay Server: A server that is available to clients and has access to the upstream server.
+* Relay Server: A server with access to the upstream server and available to clients.
 
 ```
 (Client) <-> [ Relay Server ] <-> [ Upstream Server ] <-> (Internet)
@@ -85,7 +85,7 @@ Follow these steps to set up V2Ray + Caddy (Web server) + CDN:
 1. (Optional) In your CDN, turn the proxy option on for the record.
 1. Run `./vmess.py` to generate client configuration (link).
 
-If you prefer NGINX as web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
+If you prefer NGINX as the web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
 
 Some CDN services don't offer unlimited traffic for free plans.
 Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89).
@@ -125,26 +125,6 @@ Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
 ## Subscription Link
 
 Moved here: [SUBSCRIPTION_LINK](docs/SUBSCRIPTION_LINK.md)
-
-## Tips
-
-* Some hostings might ban your proxy traffic. You can use an appropriate hosting.
-* Some Internet providers might ban your proxy traffic. Changing AlterID could be helpful.
-  See [#57](https://github.com/miladrahimi/v2ray-docker-compose/issues/57).
-
-## Docker Images
-
-By default, this repository uses the GitHub registry.
-You can modify the Docker-compose file to use Docker Hub.
-
-* GitHub:
-  * Image: ```ghcr.io/v2fly/v2ray:v5.14.1-64-std```
-  * URL: https://github.com/orgs/getimages/packages/container/package/v2fly-core
-  * Digest: `sha256:289fc9451f21a265f95615e29f05ea23bc32026db152863eee317738813521d7`
-* Docker Hub:
-  * Image: ```v2fly/v2fly-core:v4.45.2```
-  * URL: https://hub.docker.com/r/v2fly/v2fly-core/tags
-  * Digest: `sha256:289fc9451f21a265f95615e29f05ea23bc32026db152863eee317738813521d7`
 
 ## More
 
