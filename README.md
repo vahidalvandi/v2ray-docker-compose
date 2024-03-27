@@ -10,8 +10,8 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [V2Ray Behind a CDN Service](#v2ray-behind-a-cdn-service)
     * [V2Ray as Outline Bridge](#v2ray-as-outline-bridge)
   * [Client Applications](#client-applications)
-    * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
+    * [VMESS Protocol](#vmess-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
   * [More](#more)
 
