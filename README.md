@@ -99,14 +99,6 @@ Moved here: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridg
 
 ## Client Applications
 
-### VMESS Protocol
-
-This is the list of recommended applications to use the VMESS protocol:
-
-* [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
-* [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
-* [v2rayNG](https://github.com/2dust/v2rayNG) for Android
-
 ### Shadowsocks Protocol
 
 This is the list of recommended applications to use the Shadowsocks protocol:
@@ -117,6 +109,18 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 * [shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
 * [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
+
+### VMESS Protocol
+
+This is the list of recommended applications to use the VMESS protocol:
+
+* [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
+* [FoXray](https://foxray.org/#download) for macOS, iOS, and Android
+* [V2Box](https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690) for macOS and iOS
+* [V2Box](https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box) for Android
+* [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
+* [v2rayNG](https://github.com/2dust/v2rayNG) for Android
+* [v2rayN](https://github.com/2dust/v2rayN/releases) for Windows
 
 ### HTTP and SOCKS Protocols
 
