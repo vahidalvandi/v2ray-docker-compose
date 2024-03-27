@@ -11,7 +11,7 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [V2Ray as Outline Bridge](#v2ray-as-outline-bridge)
   * [Client Applications](#client-applications)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
-    * [VMESS Protocol](#vmess-protocol)
+    * [VMess Protocol](#vmess-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
   * [More](#more)
 
@@ -106,9 +106,9 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 * [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
 
-### VMESS Protocol
+### VMess Protocol
 
-This is the list of recommended applications to use the VMESS protocol:
+This is the list of recommended applications to use the VMess and other protocols:
 
 * [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
 * [FoXray](https://foxray.org/#download) for macOS, iOS, and Android
