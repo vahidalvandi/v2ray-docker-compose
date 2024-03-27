@@ -14,8 +14,6 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [Shadowsocks Protocol](#shadowsocks-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
   * [Subscription Link](#subscription-link)
-  * [Tips](#tips)
-  * [Docker Images](#docker-images)
   * [More](#more)
   * [Star History](#star-history)
 
