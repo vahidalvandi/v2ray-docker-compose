@@ -13,7 +13,6 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
-  * [Subscription Link](#subscription-link)
   * [More](#more)
 
 ## Server Solutions
@@ -122,10 +121,6 @@ This is the list of recommended applications to use the VMESS protocol:
 ### HTTP and SOCKS Protocols
 
 Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
-
-## Subscription Link
-
-Moved here: [SUBSCRIPTION_LINK](docs/SUBSCRIPTION_LINK.md)
 
 ## More
 
