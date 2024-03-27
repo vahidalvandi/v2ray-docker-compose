@@ -30,7 +30,7 @@ In this solution, you need these two servers:
 
 This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
 
-Step 1: Setup Upstream Server
+**Step 1: Setup Upstream Server**
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-upstream-server` and the `utils` directories into the upstream server.
@@ -39,7 +39,7 @@ Step 1: Setup Upstream Server
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
-Step 2: Setup Relay Server
+**Step 2: Setup Relay Server**
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-relay-server` and the `utils` directories into the relay server.
@@ -68,7 +68,7 @@ This solution provides VMESS over Websockets + TLS + CDN.
 
 Follow these steps to set up V2Ray + Caddy (Web server) + CDN:
 
-1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
+1. On your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
 1. Copy the `v2ray-caddy-cdn` and the `utils` directories into the server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
