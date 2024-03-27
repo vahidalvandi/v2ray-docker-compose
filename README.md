@@ -15,7 +15,6 @@ without direct/safe/stable access to upstream servers (servers with access to fr
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
   * [Subscription Link](#subscription-link)
   * [More](#more)
-  * [Star History](#star-history)
 
 ## Server Solutions
 
