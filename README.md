@@ -138,7 +138,7 @@ By default, this repository uses the GitHub registry.
 You can modify the Docker-compose file to use Docker Hub.
 
 * GitHub:
-  * Image: ```ghcr.io/getimages/v2fly-core:v4.45.2```
+  * Image: ```ghcr.io/v2fly/v2ray:v5.14.1-64-std```
   * URL: https://github.com/orgs/getimages/packages/container/package/v2fly-core
   * Digest: `sha256:289fc9451f21a265f95615e29f05ea23bc32026db152863eee317738813521d7`
 * Docker Hub:
