@@ -97,7 +97,7 @@ When it's off, clients connect to the server directly and CDN services also don'
 
 This **highly recommended** solution is stable and easy to set up.
 Using the Outline Manager app, you can create and manage multiple users and track their traffic.
-It supports the widely compatible Shadowsocks protocol and includes the easy-to-use Outline client app.
+It supports Shadowsocks protocol and offers the easy-to-use Outline client app.
 
 Read more: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
