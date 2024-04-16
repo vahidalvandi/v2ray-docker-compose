@@ -8,7 +8,7 @@ without direct/safe/stable access to upstream servers (servers with access to fr
   * [Server Solutions](#server-solutions)
     * [V2Ray Upsream and Relay Servers](#v2ray-upsream-and-relay-servers)
     * [V2Ray Behind a CDN Service](#v2ray-behind-a-cdn-service)
-    * [V2Ray as Outline Bridge](#v2ray-as-outline-bridge)
+    * [V2Ray as Relay for Outline](#v2ray-as-relay-for-outline)
   * [Client Applications](#client-applications)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
     * [VMess Protocol](#vmess-protocol)
@@ -18,6 +18,8 @@ without direct/safe/stable access to upstream servers (servers with access to fr
 ## Server Solutions
 
 ### V2Ray Upsream and Relay Servers
+
+This stable solution supports Shadowsocks and VMess by default and can be configured to provide other V2Ray protocols.
 
 In this solution, you need these two servers:
 
@@ -54,6 +56,8 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 
 ### V2Ray Behind a CDN Service
 
+This solution is recommended only if you don't have relay server.
+
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
 * Upstream Server: A server that has free access to the Internet.
@@ -89,9 +93,13 @@ Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compos
 You don't need to turn the cloud (proxy) on in your CDN (step 10) when the Internet is not blocked.
 When it's off, clients connect to the server directly and CDN services also don't charge you any fee.
 
-### V2Ray as Outline Bridge
+### V2Ray as Relay for Outline
 
-Moved here: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
+This **highly recommended** solution is stable and easy to set up.
+Using the Outline Manager app, you can create and manage multiple users and track their traffic.
+It supports the widely compatible Shadowsocks protocol and includes the easy-to-use Outline client app.
+
+Read more: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
 ## Client Applications
 
