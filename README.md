@@ -1,7 +1,6 @@
 # V2Ray Docker Compose
 
-This repository introduces V2Ray-based solutions to bypass limitations in highly restricted networks
-without direct/safe/stable access to upstream servers (servers with access to free Internet).
+This repository contains V2Ray-based solutions for bypassing firewalls in highly restricted networks where direct access to upstream servers (servers with free internet access) is unavailable.
 
 ## Table of contents
 
@@ -19,18 +18,16 @@ without direct/safe/stable access to upstream servers (servers with access to fr
 
 ### V2Ray Upsream and Relay Servers
 
-This stable solution supports Shadowsocks and VMess by default and can be configured to provide other V2Ray protocols.
+This solution is stable and supports Shadowsocks and VMess protocols by default.
 
-In this solution, you need these two servers:
+You will need two types of servers:
 
-* Upstream Server: A server that has access to the free Internet.
-* Relay Server: A server with access to the upstream server and available to clients.
+* **Upstream Server**: A server with access to the free internet, likely located in a foreign data center.
+* **Relay Server**: A server that can connect to the upstream server and is accessible to users, likely located in the same region as the users.
 
 ```
-(Client) <-> [ Relay Server ] <-> [ Upstream Server ] <-> (Internet)
+(Users) <-> [ Relay Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
-
-This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
 
 **Step 1: Setup Upstream Server**
 
@@ -56,7 +53,7 @@ This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) pr
 
 ### V2Ray Behind a CDN Service
 
-This solution is recommended only if you don't have relay server.
+This solution is recommended only if you don't have relay server to implement other solutions.
 
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
@@ -64,7 +61,7 @@ In this solution, you need one server (upstream) and a domain/subdomain added to
 * CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com), [ArvanCloud](//arvancloud.ir) or [DerakCloud](//derak.cloud).
 
 ```
-(Client) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
+(Users) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
 This solution provides VMESS over Websockets + TLS + CDN.
