@@ -1,17 +1,16 @@
 # V2Ray Docker Compose
 
-This repository introduces V2Ray-based solutions to bypass limitations in highly restricted networks
-without direct/safe/stable access to upstream servers (servers with access to free Internet).
+This repository contains V2Ray-based solutions for bypassing firewalls in highly restricted networks where direct access to upstream servers (servers with free internet access) is unavailable.
 
 ## Table of contents
 
   * [Server Solutions](#server-solutions)
     * [V2Ray Upsream and Relay Servers](#v2ray-upsream-and-relay-servers)
     * [V2Ray Behind a CDN Service](#v2ray-behind-a-cdn-service)
-    * [V2Ray as Outline Bridge](#v2ray-as-outline-bridge)
+    * [V2Ray as Relay for Outline](#v2ray-as-relay-for-outline)
   * [Client Applications](#client-applications)
-    * [VMESS Protocol](#vmess-protocol)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
+    * [VMess Protocol](#vmess-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
   * [More](#more)
 
@@ -19,18 +18,18 @@ without direct/safe/stable access to upstream servers (servers with access to fr
 
 ### V2Ray Upsream and Relay Servers
 
-In this solution, you need these two servers:
+This solution is stable and supports Shadowsocks and VMess protocols by default.
 
-* Upstream Server: A server that has access to the free Internet.
-* Relay Server: A server with access to the upstream server and available to clients.
+You will need two types of servers:
+
+* **Upstream Server**: A server with access to the free internet, likely located in a foreign data center.
+* **Relay Server**: A server that can connect to the upstream server and is accessible to users, likely located in the same region as the users.
 
 ```
-(Client) <-> [ Relay Server ] <-> [ Upstream Server ] <-> (Internet)
+(Users) <-> [ Relay Server ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
-This solution consists of two steps and provides VMESS and Shadowsocks (AEAD) protocols.
-
-Step 1: Setup Upstream Server
+**Step 1: Setup Upstream Server**
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-upstream-server` and the `utils` directories into the upstream server.
@@ -39,7 +38,7 @@ Step 1: Setup Upstream Server
 1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
-Step 2: Setup Relay Server
+**Step 2: Setup Relay Server**
 
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-relay-server` and the `utils` directories into the relay server.
@@ -54,13 +53,15 @@ Step 2: Setup Relay Server
 
 ### V2Ray Behind a CDN Service
 
+This solution is recommended only if you don't have relay server to implement other solutions.
+
 In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
 
 * Upstream Server: A server that has free access to the Internet.
 * CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com), [ArvanCloud](//arvancloud.ir) or [DerakCloud](//derak.cloud).
 
 ```
-(Client) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
+(Users) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
 ```
 
 This solution provides VMESS over Websockets + TLS + CDN.
@@ -68,7 +69,7 @@ This solution provides VMESS over Websockets + TLS + CDN.
 
 Follow these steps to set up V2Ray + Caddy (Web server) + CDN:
 
-1. In your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
+1. On your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
 1. Install Docker and Docker-compose on your server.
 1. Copy the `v2ray-caddy-cdn` and the `utils` directories into the server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
@@ -89,9 +90,13 @@ Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compos
 You don't need to turn the cloud (proxy) on in your CDN (step 10) when the Internet is not blocked.
 When it's off, clients connect to the server directly and CDN services also don't charge you any fee.
 
-### V2Ray as Outline Bridge
+### V2Ray as Relay for Outline
 
-Moved here: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
+This **highly recommended** solution is stable and easy to set up.
+Using the Outline Manager app, you can create and manage multiple users and track their traffic.
+It supports Shadowsocks protocol and offers the easy-to-use Outline client app.
+
+Read more: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
 ## Client Applications
 
@@ -106,9 +111,9 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 * [shadowsocks-android](https://github.com/shadowsocks/shadowsocks-android/releases)
 * [ShadowLink](https://apps.apple.com/us/app/shadowlink-shadowsocks-vpn/id1439686518) for iOS
 
-### VMESS Protocol
+### VMess Protocol
 
-This is the list of recommended applications to use the VMESS protocol:
+This is the list of recommended applications to use the VMess and other protocols:
 
 * [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
 * [FoXray](https://foxray.org/#download) for macOS, iOS, and Android
