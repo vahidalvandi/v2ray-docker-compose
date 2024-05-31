@@ -9,7 +9,7 @@ sslEnable = False
 
 # LOAD CONFIG FILES
 
-v2rayConfigPath = Path(__file__).parent.joinpath('v2ray/config/config.json')
+v2rayConfigPath = Path(__file__).parent.joinpath('v2ray.json')
 dockerComposePath = Path(__file__).parent.joinpath('docker-compose.yml')
 file = open(str(v2rayConfigPath), 'r', encoding='utf-8')
 config = json.load(file)
