@@ -1,6 +1,6 @@
 # V2Ray Docker Compose
 
-This repository contains V2Ray-based solutions for bypassing firewalls in highly restricted networks where direct access to upstream servers (servers with free internet access) is unavailable.
+This repository contains V2Ray-based solutions for bypassing firewalls in restricted networks where direct access to upstream servers (servers with free internet access) is unavailable.
 
 ## Table of contents
 
@@ -18,83 +18,87 @@ This repository contains V2Ray-based solutions for bypassing firewalls in highly
 
 ### V2Ray Upsream and Relay Servers
 
-This solution is stable and supports Shadowsocks and VMess protocols by default.
+The "V2Ray Upsream and Relay Servers" solution offers **high stability and speed** (depends on the network speeds of the relay and upstream servers).
+
+The solution uses V2Ray on the upstream server, using the VMess protocol (over Websockets) for communication with the relay server.
+The relay server provides **Shadowsocks** protocol for users, in addition to Socks5 and HTTP protocols for the relay server's own use.
 
 You will need two types of servers:
-
 * **Upstream Server**: A server with access to the free internet, likely located in a foreign data center.
 * **Relay Server**: A server that can connect to the upstream server and is accessible to users, likely located in the same region as the users.
 
+The flow of V2Ray Upsream and Relay Servers:
+
 ```
-(Users) <-> [ Relay Server ] <-> [ Upstream Server ] <-> (Internet)
+Users <-(Shadowsocks)-> Relay Server <-(VMess)-> Upstream Server <-> Internet
 ```
 
 **Step 1: Setup Upstream Server**
 
-1. Install Docker and Docker-compose.
-1. Copy the `v2ray-upstream-server` and the `utils` directories into the upstream server.
-1. Run ```./utils/bbr.sh``` to speed up server network.
-1. Run ```cat /proc/sys/kernel/random/uuid``` in your terminal to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in `config.json` with the generated UUID.
+1. Install Docker and Docker-compose ([Official Documanetation](https://docs.docker.com/engine/install/#supported-platforms)).
+1. Run `git clone https://github.com/miladrahimi/v2ray-docker-compose.git` to download this repository.
+1. Run `./utils/bbr.sh` to setup BBR in order to speed up server network.
+1. Run `cd v2ray-upstream-server` to change the directory.
+1. Run `cat /proc/sys/kernel/random/uuid` to generate a UUID.
+1. Replace `<UPSTREAM-UUID>` in `v2ray.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
 **Step 2: Setup Relay Server**
 
-1. Install Docker and Docker-compose.
-1. Copy the `v2ray-relay-server` and the `utils` directories into the relay server.
-1. Run ```./utils/bbr.sh``` to speed up server network.
-1. Replace the following variables in `config.json` with appropriate values.
+1. Install Docker and Docker-compose ([Official Documanetation](https://docs.docker.com/engine/install/#supported-platforms)).
+1. Run `git clone https://github.com/miladrahimi/v2ray-docker-compose.git` to download this repository.
+1. Run `./utils/bbr.sh` to setup BBR in order to speed up server network.
+1. Run `cd v2ray-relay-server` to change the directory.
+1. Replace the following variables in `v2ray.json` with appropriate values.
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
-    * `<BRIDGE-UUID>`: A new UUID for relay server (Run ```cat /proc/sys/kernel/random/uuid```).
     * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).
     * `<UPSTREAM-UUID>`: The upstream server UUID from the previous step.
 1. Run `docker-compose up -d`.
 1. Run `./clients.py` to generate client configurations and links.
 
-### V2Ray Behind a CDN Service
+### V2Ray Behind CDN
 
-This solution is recommended only if you don't have relay server to implement other solutions.
+The "V2Ray Behind CDN" solution is recommended only if you don't have relay server to implement other solutions.
 
-In this solution, you need one server (upstream) and a domain/subdomain added to a CDN service.
+This solution provides **VMess over Websockets + TLS + CDN** ([Read more](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)) for users.
 
-* Upstream Server: A server that has free access to the Internet.
-* CDN Service: A Content delivery network like [Cloudflare](//cloudflare.com), [ArvanCloud](//arvancloud.ir) or [DerakCloud](//derak.cloud).
+In this solution, you need upstream server and a domain added to a CDN service.
+* **Upstream Server**: A server with access to the free internet, likely located in a foreign data center.
+* **CDN Service**: A Content Delivery Network service like [Cloudflare](//cloudflare.com) and [ArvanCloud](//arvancloud.ir).
+
+The flow of V2Ray Behind CDN:
 
 ```
-(Users) <-> [ CDN Service ] <-> [ Upstream Server ] <-> (Internet)
+Users <-(VMess)-> CDN <-> Upstream Server <-> Internet
 ```
 
-This solution provides VMESS over Websockets + TLS + CDN.
-[Read more...](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)
+Follow these steps to set up V2Ray, Caddy (Web server) and CDN:
 
-Follow these steps to set up V2Ray + Caddy (Web server) + CDN:
-
-1. On your CDN, create an `A` record pointing to your server IP with the proxy option turned off.
-1. Install Docker and Docker-compose on your server.
-1. Copy the `v2ray-caddy-cdn` and the `utils` directories into the server.
-1. Run ```./utils/bbr.sh``` to speed up server network.
-1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in `config.json` with the generated UUID.
+1. On the CDN panel, create an `A` record pointing to the server IP with the proxy option turned off.
+1. Install Docker and Docker-compose ([Official Documanetation](https://docs.docker.com/engine/install/#supported-platforms)).
+1. Run `git clone https://github.com/miladrahimi/v2ray-docker-compose.git` to download this repository.
+1. Run `./utils/bbr.sh` to setup BBR in order to speed up server network.
+1. Run `cd v2ray-caddy-cdn` to change the directory.
+1. Run `cat /proc/sys/kernel/random/uuid` to generate a UUID.
+1. Replace `<UPSTREAM-UUID>` in `v2ray.json` with the generated UUID.
 1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdomain.
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser.
    Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-caddy-cdn/caddy/web/index.html) is loaded.
-1. (Optional) In your CDN, turn the proxy option on for the record.
+1. On the CDN panel, turn the proxy option on for the record created in the first step.
 1. Run `./vmess.py` to generate client configuration (link).
 
-If you prefer NGINX as the web server, read [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md) instead.
-
-Some CDN services don't offer unlimited traffic for free plans.
-Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89).
-
-You don't need to turn the cloud (proxy) on in your CDN (step 10) when the Internet is not blocked.
-When it's off, clients connect to the server directly and CDN services also don't charge you any fee.
+**Notes**
+- If you prefer using NGINX as your web server, please refer to [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md).
+- Some CDN services do not provide unlimited traffic with their free plans.
+  Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89).
+- You can skip step 10 and keep the proxy off, but this could lead to quicker server blocking.
 
 ### V2Ray as Relay for Outline
 
 This **highly recommended** solution is stable and easy to set up.
-Using the Outline Manager app, you can create and manage multiple users and track their traffic.
-It supports Shadowsocks protocol and offers the easy-to-use Outline client app.
+Using the Outline Manager app, you can setup servers, create and manage users and track their traffic.
+It supports **Shadowsocks** protocol and offers the user-friendly Outline client application.
 
 Read more: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
@@ -113,7 +117,7 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 
 ### VMess Protocol
 
-This is the list of recommended applications to use the VMess and other protocols:
+This is the list of recommended applications to use the VMess protocol:
 
 * [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
 * [FoXray](https://foxray.org/#download) for macOS, iOS, and Android
