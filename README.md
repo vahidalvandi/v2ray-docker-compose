@@ -20,7 +20,7 @@ This repository contains V2Ray-based solutions for bypassing firewalls in restri
 
 The "V2Ray Upsream and Relay Servers" solution offers **high stability and speed** (depends on the network speeds of the relay and upstream servers).
 
-The solution uses V2Ray on the upstream server, using the VMess protocol (over Websockets) for communication with the relay server.
+The solution uses V2Ray on the upstream server, using the Shadowsocks protocol for communication with the relay server.
 The relay server provides **Shadowsocks** protocol for users, in addition to Socks5 and HTTP protocols for the relay server's own use.
 
 You will need two types of servers:
@@ -30,7 +30,7 @@ You will need two types of servers:
 The flow of V2Ray Upsream and Relay Servers:
 
 ```
-Users <-(Shadowsocks)-> Relay Server <-(VMess)-> Upstream Server <-> Internet
+Users <-(Shadowsocks)-> Relay Server <-(Shadowsocks)-> Upstream Server <-> Internet
 ```
 
 **Step 1: Setup Upstream Server**
@@ -38,8 +38,7 @@ Users <-(Shadowsocks)-> Relay Server <-(VMess)-> Upstream Server <-> Internet
 1. Install Docker and Docker-compose ([Official Documanetation](https://docs.docker.com/engine/install/#supported-platforms)).
 1. Run `git clone https://github.com/miladrahimi/v2ray-docker-compose.git` to download this repository.
 1. Run `cd v2ray-docker-compose/v2ray-upstream-server` to change the directory.
-1. Run `cat /proc/sys/kernel/random/uuid` to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in `v2ray.json` with the generated UUID.
+1. Replace `<UPSTREAM-PASSWORD>` in `v2ray.json` with a Shadowsocks password like `FR33DoM`.
 1. Run `docker compose up -d`.
 1. (Optional) Run `./../utils/bbr.sh` to setup BBR and speed up the server network.
 
@@ -49,9 +48,9 @@ Users <-(Shadowsocks)-> Relay Server <-(VMess)-> Upstream Server <-> Internet
 1. Run `git clone https://github.com/miladrahimi/v2ray-docker-compose.git` to download this repository.
 1. Run `cd v2ray-docker-compose/v2ray-relay-server` to change the directory.
 1. Replace the following variables in `v2ray.json` with appropriate values.
-    * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
+    * `<RELAY-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
     * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).
-    * `<UPSTREAM-UUID>`: The upstream server UUID from the previous step.
+    * `<UPSTREAM-PASSWORD>`: The Shadowsocks password from the upstream server in the previous step.
 1. Run `docker compose up -d`.
 1. Run `./clients.py` to generate client configurations and links.
 1. (Optional) Run `./../utils/bbr.sh` to setup BBR and speed up the server network.
@@ -89,6 +88,7 @@ Follow these steps to set up V2Ray, Caddy (Web server) and CDN:
 1. (Optional) Run `./../utils/bbr.sh` to setup BBR and speed up the server network.
 
 **Notes**
+
 - If you prefer using NGINX as your web server, please refer to [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md).
 - Some CDN services do not provide unlimited traffic with their free plans.
   Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89).
