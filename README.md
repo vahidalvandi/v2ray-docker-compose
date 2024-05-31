@@ -6,7 +6,7 @@ This repository contains V2Ray-based solutions for bypassing firewalls in restri
 
   * [Server Solutions](#server-solutions)
     * [V2Ray Upsream and Relay Servers](#v2ray-upsream-and-relay-servers)
-    * [V2Ray Behind a CDN Service](#v2ray-behind-a-cdn-service)
+    * [V2Ray Behind CDN](#v2ray-behind-cdn)
     * [V2Ray as Relay for Outline](#v2ray-as-relay-for-outline)
   * [Client Applications](#client-applications)
     * [Shadowsocks Protocol](#shadowsocks-protocol)
@@ -37,30 +37,30 @@ Users <-(Shadowsocks)-> Relay Server <-(VMess)-> Upstream Server <-> Internet
 
 1. Install Docker and Docker-compose ([Official Documanetation](https://docs.docker.com/engine/install/#supported-platforms)).
 1. Run `git clone https://github.com/miladrahimi/v2ray-docker-compose.git` to download this repository.
-1. Run `./utils/bbr.sh` to setup BBR in order to speed up server network.
-1. Run `cd v2ray-upstream-server` to change the directory.
+1. Run `cd v2ray-docker-compose/v2ray-upstream-server` to change the directory.
 1. Run `cat /proc/sys/kernel/random/uuid` to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray.json` with the generated UUID.
 1. Run `docker-compose up -d`.
+1. (Optional) Run `./../utils/bbr.sh` to setup BBR and speed up the server network.
 
 **Step 2: Setup Relay Server**
 
 1. Install Docker and Docker-compose ([Official Documanetation](https://docs.docker.com/engine/install/#supported-platforms)).
 1. Run `git clone https://github.com/miladrahimi/v2ray-docker-compose.git` to download this repository.
-1. Run `./utils/bbr.sh` to setup BBR in order to speed up server network.
-1. Run `cd v2ray-relay-server` to change the directory.
+1. Run `cd v2ray-docker-compose/v2ray-relay-server` to change the directory.
 1. Replace the following variables in `v2ray.json` with appropriate values.
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
     * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).
     * `<UPSTREAM-UUID>`: The upstream server UUID from the previous step.
 1. Run `docker-compose up -d`.
 1. Run `./clients.py` to generate client configurations and links.
+1. (Optional) Run `./../utils/bbr.sh` to setup BBR and speed up the server network.
 
 ### V2Ray Behind CDN
 
 The "V2Ray Behind CDN" solution is recommended only if you don't have relay server to implement other solutions.
 
-This solution provides **VMess over Websockets + TLS + CDN** ([Read more](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)) for users.
+This solution provides **VMess** over **Websockets + TLS + CDN** ([Read more](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)) for users.
 
 In this solution, you need upstream server and a domain added to a CDN service.
 * **Upstream Server**: A server with access to the free internet, likely located in a foreign data center.
@@ -74,19 +74,19 @@ Users <-(VMess)-> CDN <-> Upstream Server <-> Internet
 
 Follow these steps to set up V2Ray, Caddy (Web server) and CDN:
 
-1. On the CDN panel, create an `A` record pointing to the server IP with the proxy option turned off.
+1. In the CDN panel, create an `A` record for the server IP with the proxy disabled.
 1. Install Docker and Docker-compose ([Official Documanetation](https://docs.docker.com/engine/install/#supported-platforms)).
 1. Run `git clone https://github.com/miladrahimi/v2ray-docker-compose.git` to download this repository.
-1. Run `./utils/bbr.sh` to setup BBR in order to speed up server network.
-1. Run `cd v2ray-caddy-cdn` to change the directory.
+1. Run `cd v2ray-docker-compose/v2ray-caddy-cdn` to change the directory.
 1. Run `cat /proc/sys/kernel/random/uuid` to generate a UUID.
 1. Replace `<UPSTREAM-UUID>` in `v2ray.json` with the generated UUID.
 1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdomain.
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser.
    Wait until the [homepage](https://github.com/miladrahimi/v2ray-docker-compose/blob/master/v2ray-caddy-cdn/caddy/web/index.html) is loaded.
-1. On the CDN panel, turn the proxy option on for the record created in the first step.
-1. Run `./vmess.py` to generate client configuration (link).
+1. In the CDN panel, enable the proxy option for the record created during the first step.
+1. Run `./vmess.py` to generate client configuration link.
+1. (Optional) Run `./../utils/bbr.sh` to setup BBR and speed up the server network.
 
 **Notes**
 - If you prefer using NGINX as your web server, please refer to [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md).
