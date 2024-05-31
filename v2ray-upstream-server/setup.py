@@ -6,7 +6,7 @@ from pathlib import Path
 
 # LOAD CONFIG FILE
 
-path = Path(__file__).parent.joinpath('v2ray/config/config.json')
+path = Path(__file__).parent.joinpath('config.json')
 file = open(str(path), 'r', encoding='utf-8')
 config = json.load(file)
 
