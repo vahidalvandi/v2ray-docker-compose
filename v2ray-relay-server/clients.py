@@ -21,15 +21,4 @@ for inbound in config['inbounds']:
         method = inbound['settings']['method']
         password = inbound['settings']['password']
         security = base64.b64encode((method + ":" + password).encode('ascii')).decode('ascii')
-        link = "ss://{}@{}:{}#{}:{}".format(security, ip, port, ip, port)
-        print("\nShadowsocks:\n" + link)
-    if inbound['protocol'] == 'vmess':
-        port = str(inbound['port'])
-        uuid = inbound['settings']['clients'][0]['id']
-        security = inbound['settings']['clients'][0]['security']
-        ps = "{}:{}".format(ip, port)
-        c = {"add": ip, "aid": "0", "host": "", "id": uuid, "net": "tcp", "path": "", "port": port, "ps": ps,
-             "tls": "none", "type": "none", "v": "2"}
-        j = json.dumps(c)
-        link = "vmess://" + base64.b64encode(j.encode('ascii')).decode('ascii')
-        print("\nVMESS:\n" + link)
+        print("Shadowsocks: " + "ss://{}@{}:{}".format(security, ip, port))
