@@ -1,7 +1,7 @@
 # HTTP & SOCKS Protocols
 
 The HTTP and SOCKS (SOCKS5) proxy protocols are appropriate for internal usage on the relay server and port forwarding.
-They would be exposed to the 127.0.0.1 IP address without passwords.
+They would be exposed to the `127.0.0.1` IP address without passwords.
 
 ## On the relay server
 
