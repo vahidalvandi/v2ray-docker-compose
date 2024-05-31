@@ -42,7 +42,7 @@ services:
       - './vhost:/etc/nginx/vhost.d'
       - './html:/usr/share/nginx/html'
     environment:
-      - DEFAULT_EMAIL=YOUR_EMAIL
+      - DEFAULT_EMAIL=YOUR@EMAIL.COM
       - NGINX_PROXY_CONTAINER=nginx
       - NGINX_DOCKER_GEN_CONTAINER=dockergen
       
@@ -52,8 +52,8 @@ services:
     restart: always
     environment:
       - v2ray.vmess.aead.forced=false
-      - VIRTUAL_HOST=YOUR_DOMAIN
-      - LETSENCRYPT_HOST=YOUR_DOMAIN
+      - VIRTUAL_HOST=YOUR.DOMAIN.COM
+      - LETSENCRYPT_HOST=YOUR.DOMAIN.COM
       - VIRTUAL_PORT=1310
     volumes:
       - './v2ray/config:/etc/v2ray/'

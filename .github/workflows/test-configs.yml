@@ -23,4 +23,4 @@ jobs:
         with:
           node-version: 16
       - name: check json configs format
-        run: npm install jsonlint -g > '/dev/null' 2>&1 && jsonlint ./${{ matrix.configs }}/v2ray/config/config.json
+        run: npm install jsonlint -g > '/dev/null' 2>&1 && jsonlint ./${{ matrix.configs }}/config.json

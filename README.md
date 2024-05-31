@@ -35,7 +35,7 @@ You will need two types of servers:
 1. Copy the `v2ray-upstream-server` and the `utils` directories into the upstream server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
 1. Run ```cat /proc/sys/kernel/random/uuid``` in your terminal to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
+1. Replace `<UPSTREAM-UUID>` in `config.json` with the generated UUID.
 1. Run `docker-compose up -d`.
 
 **Step 2: Setup Relay Server**
@@ -43,7 +43,7 @@ You will need two types of servers:
 1. Install Docker and Docker-compose.
 1. Copy the `v2ray-relay-server` and the `utils` directories into the relay server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
-1. Replace the following variables in `v2ray/config/config.json` with appropriate values.
+1. Replace the following variables in `config.json` with appropriate values.
     * `<SHADOWSOCKS-PASSWORD>`: A password for Shadowsocks users like `FR33DoM`.
     * `<BRIDGE-UUID>`: A new UUID for relay server (Run ```cat /proc/sys/kernel/random/uuid```).
     * `<UPSTREAM-IP>`: The upstream server IP address (like `13.13.13.13`).
@@ -74,7 +74,7 @@ Follow these steps to set up V2Ray + Caddy (Web server) + CDN:
 1. Copy the `v2ray-caddy-cdn` and the `utils` directories into the server.
 1. Run ```./utils/bbr.sh``` to speed up server network.
 1. Run ```cat /proc/sys/kernel/random/uuid``` to generate a UUID.
-1. Replace `<UPSTREAM-UUID>` in `v2ray/config/config.json` with the generated UUID.
+1. Replace `<UPSTREAM-UUID>` in `config.json` with the generated UUID.
 1. Replace `<EXAMPLE.COM>` in `caddy/Caddyfile` with your domain/subdomain.
 1. Run `docker-compose up -d`.
 1. Visit your domain/subdomain in your web browser.

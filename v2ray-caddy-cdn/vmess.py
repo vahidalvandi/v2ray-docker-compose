@@ -6,7 +6,7 @@ from pathlib import Path
 
 path = Path(__file__).parent
 
-config_file = open(str(path.joinpath('v2ray/config/config.json')), 'r', encoding='utf-8')
+config_file = open(str(path.joinpath('v2ray.json')), 'r', encoding='utf-8')
 config = json.load(config_file)
 
 caddy = open(str(path.joinpath('caddy/Caddyfile')), 'r', encoding='utf-8').read()

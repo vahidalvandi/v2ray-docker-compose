@@ -6,4 +6,4 @@ services:
     environment:
       - v2ray.vmess.aead.forced=false
     volumes:
-      - ./config.json:/etc/v2ray/config.json
+      - ./v2ray.json:/etc/v2ray/config.json

@@ -1,25 +1,17 @@
-version: "3"
-
 services:
   v2ray:
-    image: ghcr.io/v2fly/v2ray:v5.14.1-64-std
+    image: ghcr.io/v2fly/v2ray:v5.16.1
     restart: always
+    network_mode: "host"
     environment:
       - v2ray.vmess.aead.forced=false
     volumes:
-      - ./v2ray/config/:/etc/v2ray/
-      - ./v2ray/logs:/var/log/v2ray/
-    ports:
-      - "127.0.0.1:1310:1310"
-      - "127.0.0.1:1310:1310/udp"
+      - ./v2ray.json:/etc/v2ray/config.json
+
   caddy:
     image: caddy:2.7.6-alpine
     restart: always
-    ports:
-      - "80:80"
-      - "80:80/udp"
-      - "443:443"
-      - "443:443/udp"
+    network_mode: "host"
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy/web/:/usr/share/caddy
