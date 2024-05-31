@@ -23,6 +23,9 @@ The "V2Ray Upsream and Relay Servers" solution offers **high stability and speed
 The solution uses V2Ray on the upstream server, using the Shadowsocks protocol for communication with the relay server.
 The relay server provides **Shadowsocks** protocol for users, in addition to Socks5 and HTTP protocols for the relay server's own use.
 
+The Shadowsocks protocol is used because it operates on layer 4, making it very fast.
+Additionally, there are many user-friendly client applications that support this protocol.
+
 You will need two types of servers:
 * **Upstream Server**: A server with access to the free internet, likely located in a foreign data center.
 * **Relay Server**: A server that can connect to the upstream server and is accessible to users, likely located in the same region as the users.
@@ -30,7 +33,7 @@ You will need two types of servers:
 The flow of V2Ray Upsream and Relay Servers:
 
 ```
-Users <-(Shadowsocks)-> Relay Server <-(Shadowsocks)-> Upstream Server <-> Internet
+Users <-> Relay Server <-> Upstream Server <-> Internet
 ```
 
 **Step 1: Setup Upstream Server**
@@ -68,7 +71,7 @@ In this solution, you need upstream server and a domain added to a CDN service.
 The flow of V2Ray Behind CDN:
 
 ```
-Users <-(VMess)-> CDN <-> Upstream Server <-> Internet
+Users <-> CDN <-> Upstream Server <-> Internet
 ```
 
 Follow these steps to set up V2Ray, Caddy (Web server) and CDN:
