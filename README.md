@@ -12,7 +12,7 @@ This repository contains V2Ray-based solutions for bypassing firewalls in restri
     * [Shadowsocks Protocol](#shadowsocks-protocol)
     * [VMess Protocol](#vmess-protocol)
     * [HTTP and SOCKS Protocols](#http-and-socks-protocols)
-  * [More](#more)
+  * [Links](#links)
 
 ## Server Solutions
 
@@ -131,7 +131,7 @@ This is the list of recommended applications to use the VMess protocol:
 
 Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
 
-## More
+## Links
 
 * [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 * [V2Ray Config Examples](https://github.com/xesina/v2ray-config-examples)
