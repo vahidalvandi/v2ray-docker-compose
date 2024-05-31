@@ -1,29 +1,13 @@
 {
-  "log": {
-    "loglevel": "warning"
-  },
   "inbounds": [
     {
       "listen": "0.0.0.0",
-      "port": 1310,
-      "protocol": "vmess",
+      "port": 8000,
+      "protocol": "shadowsocks",
       "settings": {
-        "clients": [
-          {
-            "id": "<UPSTREAM-UUID>",
-            "alterId": 0,
-            "security": "auto"
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-          "path": "/"
-        }
-      },
-      "mux": {
-        "enabled": true
+        "password": "<UPSTREAM-PASSWORD>",
+        "method": "chacha20-ietf-poly1305",
+        "network": "tcp,udp"
       }
     }
   ],
@@ -39,5 +23,8 @@
       "8.8.4.4",
       "localhost"
     ]
+  },
+  "log": {
+    "loglevel": "warning"
   }
 }
