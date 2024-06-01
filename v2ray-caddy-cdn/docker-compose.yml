@@ -9,7 +9,7 @@ services:
       - ./v2ray.json:/etc/v2ray/config.json
 
   caddy:
-    image: caddy:2.7.6-alpine
+    image: caddy:2.8
     restart: always
     network_mode: "host"
     volumes:

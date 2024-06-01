@@ -2,7 +2,7 @@
   "inbounds": [
     {
       "listen": "0.0.0.0",
-      "port": 8000,
+      "port": 2213,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -38,6 +38,6 @@
     ]
   },
   "log": {
-    "loglevel": "warning"
+    "loglevel": "debug"
   }
 }
