@@ -1,15 +1,15 @@
 # HTTP & SOCKS Protocols
 
 The HTTP and SOCKS (SOCKS5) proxy protocols are appropriate for internal usage on the relay server and port forwarding.
-They would be exposed to the `127.0.0.1` IP address without passwords.
+They would be exposed to the `127.0.0.1` IP address without authentication.
 
-## On the relay server
+## On Relay Server
 
 The command below shows how to use the HTTP proxy on the relay server.
 
 ```shell
-export {http,https}_proxy="http://127.0.0.1:1110"
-export {HTTP,HTTPS}_PROXY="http://127.0.0.1:1110"
+export {http,https}_proxy="http://127.0.0.1:2000"
+export {HTTP,HTTPS}_PROXY="http://127.0.0.1:2000"
 
 # This "curl" should return the upstream IP (not relay!)
 curl ifconfig.io
@@ -21,13 +21,13 @@ unset {http,https}_proxy
 unset {HTTP,HTTPS}_PROXY
 ```
 
-## On the local devices
+## On Local Devices
 
 You can use the HTTP or SOCKS proxies on your local devices using port forwarding.
 The following SSH command makes the HTTP proxy available to the local device and the private network it uses.
 
 ```shell
-ssh -vNL 1110:0.0.0.0:1110 root@13.13.13.13
+ssh -vNL 2000:0.0.0.0:2000 root@13.13.13.13
 # ssh -vNL <LOCAL-HTTP-PORT>:<LOCAL-IP-ADDRESS>:<REMOTE-HTTP-PORT> <USER>@<BRIDGE-IP>
 
 export {http,https}_proxy="http://127.0.0.1:1110"
@@ -35,7 +35,7 @@ export {HTTP,HTTPS}_PROXY="http://127.0.0.1:1110"
 # ...
 ```
 
-## In SSH connections
+## In SSH Connections
 
 You can add the following line to the `$HOME/.ssh/ssh_config` file to use the HTTP or SOCKS proxies in your SSH connections.
 
