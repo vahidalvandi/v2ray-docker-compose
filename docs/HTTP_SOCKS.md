@@ -30,8 +30,8 @@ The following SSH command makes the HTTP proxy available to the local device and
 ssh -vNL 2000:0.0.0.0:2000 root@13.13.13.13
 # ssh -vNL <LOCAL-HTTP-PORT>:<LOCAL-IP-ADDRESS>:<REMOTE-HTTP-PORT> <USER>@<BRIDGE-IP>
 
-export {http,https}_proxy="http://127.0.0.1:1110"
-export {HTTP,HTTPS}_PROXY="http://127.0.0.1:1110"
+export {http,https}_proxy="http://127.0.0.1:2000"
+export {HTTP,HTTPS}_PROXY="http://127.0.0.1:2000"
 # ...
 ```
 
