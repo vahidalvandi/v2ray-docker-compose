@@ -99,11 +99,12 @@ Follow these steps to set up V2Ray, Caddy (Web server) and CDN:
 
 ### V2Ray as Relay for Outline
 
-This **highly recommended** solution is stable and easy to set up.
-Using the Outline Manager app, you can setup servers, create and manage users and track their traffic.
-It supports **Shadowsocks** protocol and offers the user-friendly Outline Client application for users.
+The "V2Ray as Relay for Outline" solution is stable, fast, easy to set up, and **highly recommended**.
 
-Read more: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
+It allows you to use Outline proxy tools to support the **Shadowsocks** protocol and provides the user-friendly Outline Client application for users,
+along with the Outline Manager app for setting up servers, creating and managing users, and tracking their traffic.
+
+Read more in the [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server) repository.
 
 ## Client Applications
 
