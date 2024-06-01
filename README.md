@@ -62,7 +62,7 @@ Users <-> Relay Server <-> Upstream Server <-> Internet
 
 The "V2Ray Behind CDN" solution is recommended only if you don't have relay server to implement other solutions.
 
-This solution provides **VMess** over **Websockets + TLS + CDN** ([Read more](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)) for users.
+This solution provides **VMess** protocol over **Websockets + TLS + CDN** ([Read more](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)) for users.
 
 In this solution, you need upstream server and a domain added to a CDN service.
 * **Upstream Server**: A server with access to the free internet, likely located in a foreign data center.
