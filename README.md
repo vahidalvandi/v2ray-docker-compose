@@ -101,7 +101,7 @@ Follow these steps to set up V2Ray, Caddy (Web server) and CDN:
 
 This **highly recommended** solution is stable and easy to set up.
 Using the Outline Manager app, you can setup servers, create and manage users and track their traffic.
-It supports **Shadowsocks** protocol and offers the user-friendly Outline client application.
+It supports **Shadowsocks** protocol and offers the user-friendly Outline Client application for users.
 
 Read more: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge-server)
 
@@ -109,7 +109,7 @@ Read more: [Outline Bridge Server](https://github.com/miladrahimi/outline-bridge
 
 ### Shadowsocks Protocol
 
-This is the list of recommended applications to use the Shadowsocks protocol:
+This is the list of recommended applications for Shadowsocks protocol:
 
 * [Outline](https://getoutline.org/get-started/#step-3) for all platforms
 * [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG/releases) for macOS
@@ -120,7 +120,7 @@ This is the list of recommended applications to use the Shadowsocks protocol:
 
 ### VMess Protocol
 
-This is the list of recommended applications to use the VMess protocol:
+This is the list of recommended applications for VMess protocol:
 
 * [Nekoray](https://github.com/MatsuriDayo/nekoray/releases) for macOS, Windows, and Linux
 * [FoXray](https://foxray.org/#download) for macOS, iOS, and Android
