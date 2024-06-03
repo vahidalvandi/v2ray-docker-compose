@@ -64,7 +64,7 @@ The "V2Ray Behind CDN" solution is recommended only if you don't have relay serv
 
 This solution provides **VMess** protocol over **Websockets + TLS + CDN** ([Read more](https://guide.v2fly.org/en_US/advanced/wss_and_web.html)) for users.
 
-In this solution, you need upstream server and a domain added to a CDN service.
+In this solution, you need an upstream server and a domain integrated with a CDN service:
 * **Upstream Server**: A server with access to the free internet, likely located in a foreign data center.
 * **CDN Service**: A Content Delivery Network service like [Cloudflare](//cloudflare.com) and [ArvanCloud](//arvancloud.ir).
 
