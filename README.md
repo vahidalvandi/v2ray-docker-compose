@@ -92,7 +92,7 @@ Follow these steps to set up V2Ray, Caddy (Web server) and CDN:
 
 **Notes**
 
-- If you prefer using NGINX as your web server, please refer to [V2RAY_NGINX_CDN](docs/V2RAY_NGINX_CDN.md).
+- If you prefer using NGINX as your web server, please refer to [V2Ray Behind CDN and NGINX](docs/V2RAY_NGINX_CDN.md).
 - Some CDN services do not provide unlimited traffic with their free plans.
   Please check [CDN Free Plans](https://github.com/miladrahimi/v2ray-docker-compose/discussions/89).
 - You can skip step 10 and keep the proxy off, but this could lead to quicker server blocking.
@@ -133,7 +133,7 @@ This is the list of recommended applications for VMess protocol:
 
 ### HTTP and SOCKS Protocols
 
-Moved here: [HTTP_SOCKS](docs/HTTP_SOCKS.md)
+Moved to [HTTP & SOCKS Protocols](docs/HTTP_SOCKS.md).
 
 ## Links
 
