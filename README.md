@@ -90,6 +90,8 @@ Follow these steps to set up V2Ray, Caddy (Web server) and CDN:
 1. Run `./vmess.py` to generate client configuration link.
 1. (Optional) Run `./../utils/bbr.sh` to setup BBR and speed up the server network.
 
+create dns free in https://freedns.afraid.org/subdomain/
+
 **Notes**
 
 - If you prefer using NGINX as your web server, please refer to [V2Ray Behind CDN and NGINX](docs/V2RAY_NGINX_CDN.md).
